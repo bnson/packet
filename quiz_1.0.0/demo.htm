@@ -1,0 +1,140 @@
+<html><head>
+
+	<title>BNSON - HTML Template</title>
+	
+	<meta charset="UTF-8">
+	
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+	<!--
+	
+	-->
+	</style>
+
+	<script language="JavaScript">
+
+		function getScore() {
+			
+			var score = 0;
+			var quest = $("#quiz ul");
+			var chois = $("#quiz ul li input"); 		
+			var answer = $("#quiz ul li"); 	
+
+			for (i=0; i<chois.length; i++) {
+				
+				answer.eq(i).css({'color':''}); 
+				if (chois[i].checked == true && chois[i].value == "1") {
+					score++;
+				}
+
+				if (chois[i].checked == true && chois[i].value == "0") {
+					answer.eq(i).css({'color':'#ff0000'}); 
+				}
+				
+				
+			}			
+			
+			score = Math.round(score/quest.length*100);
+			alert("▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n\n" 
+					+ "\t\t\t\tSCORE: " + score + "%"
+					+ "\n\n▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n");
+			
+		}	
+		
+		function getAnswers() {
+			
+			var correctAnswers = "";
+
+			var quest = $("#quiz ul");			
+			var chois = $("#quiz ul li input"); 	
+			var answer = $("#quiz ul li"); 	
+			
+			
+			for (i=0; i<quest.length; i++) {
+				var idx = i*chois.length/quest.length;
+				for (j=idx; j<idx+3; j++) {
+					if (chois[j].value == "1") {
+						correctAnswers += "\tQestion " + (i+1) + ": " + answer.eq(j).text() + "\r\n";
+						answer.eq(j).css({'color':'#0066ff'}); 
+					}				
+					
+				}
+			}			
+			
+			//alert("ANSWERS: \n"
+			//		+ "▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬\n\n" 
+			//		+ correctAnswers + "\n");
+			
+		}	
+
+		function resetAnswers() {
+	
+			var chois = $("#quiz ul li input"); 	
+			var answer = $("#quiz ul li"); 	
+		
+			for (i=0; i<chois.length; i++) {
+				
+				answer.eq(i).css({'color':''}); 				
+				
+			}			
+		
+		}
+	
+	</script>
+
+</head>
+
+<body>
+
+	<h3>Web Design Quiz</h3>
+
+	<form id="quiz">
+
+		1. What does CSS stand for?
+		<ul style="margin-top: 1pt">
+		  <li><input name="q1" value="0" type="radio">Colorful Style Symbols</li>
+		  <li><input name="q1" value="0" type="radio">Cascading Style Sheets</li>
+		  <li><input name="q1" value="1" type="radio">Computer Style Symbols</li>
+		</ul>
+
+		2. What does DHTML stand for?
+		<ul style="margin-top: 1pt">
+		  <li><input name="q2" value="1" type="radio">Dramatic HTML</li>
+		  <li><input name="q2" value="0" type="radio">Design HTML</li>
+		  <li><input name="q2" value="0" type="radio">Dynamic HTML</li>
+		</ul>
+		3. Who created Javascript?
+		<ul style="margin-top: 1pt">
+		  <li><input name="q3" value="0" type="radio">Microsoft</li>
+		  <li><input name="q3" value="1" type="radio">Netscape</li>
+		  <li><input name="q3" value="0" type="radio">Sun Micro Systems</li>
+		</ul>
+		4. What does CGI stand for?
+		<ul style="margin-top: 1pt">
+		  <li><input name="q4" value="0" type="radio">Cascading Gate Interaction</li>
+		  <li><input name="q4" value="0" type="radio">Common GIF Interface</li>
+		  <li><input name="q4" value="1" type="radio">Common Gateway Interface</li>
+		</ul>
+		5. What does CGI stand for?
+		<ul style="margin-top: 1pt">
+		  <li><input name="q5" value="1" type="radio">Cascading Gate Interaction</li>
+		  <li><input name="q5" value="0" type="radio">Common GIF Interface</li>
+		  <li><input name="q5" value="0" type="radio">Common Gateway Interface</li>
+		</ul>		
+
+		<input value="Get Score" onclick="getScore()" type="button">
+		<input value="Get Answers" onclick="getAnswers()" type="button">
+		<input value="Rest Answers" type="reset" onclick="resetAnswers()">
+
+	</form>
+
+
+</body></html>
