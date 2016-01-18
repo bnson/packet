@@ -1,0 +1,89 @@
+    private void getEnglish(String path, String save) {
+        ArrayList<String> arr_data = new ArrayList<String>();
+        //System.out.println("Paht: " + path);
+        
+        try {
+            Document doc = Jsoup.connect(path)
+              .data("query", "Java")
+              .data("parameter1","\u00E8")                   
+              .header("Content-Type","application/x-www-form-urlencoded;charset=UTF-8")
+              .userAgent("Mozilla")
+              .cookie("PHPSESSID", "ckj5n9leqr5pdjo9s08m47k3k5")
+              .timeout(10000)        
+              .get();           
+            
+            
+                        
+            
+            
+            String tmp_str_01 = "<audio controls=\"\" preload=\"auto\"><source src=\"";
+            Elements dataAudios = doc.select("source");            
+            for (Element data : dataAudios) {
+                tmp_str_01 = tmp_str_01 + data.attr("src");
+                //System.out.println(data.attr("src") + "\n");
+                break;
+            }              
+            
+            tmp_str_01 = tmp_str_01 + "\"></source></audio>";
+            
+            String tmp_str = "";
+            Elements datas = doc.select("form[name=myquiz]");
+            for (Element data : datas) {
+                tmp_str = data.html();
+                //System.out.println(data.html() + "\n");
+                break;
+            }
+            tmp_str = tmp_str.replaceAll("<p>", "");
+            tmp_str = tmp_str.replaceAll("</p>", "");
+            tmp_str = tmp_str.replaceAll("<br />", "\r\n");
+            tmp_str = tmp_str.replaceAll("\r\n ", "\r\n");
+            tmp_str = tmp_str.replaceAll("((?m)^[^\r\n]+(<input).*$)", "<li>$1</li>");
+            tmp_str = tmp_str.replaceAll("((?m)^[^<li].*$)", "</ul>\r\n$1\r\n<ul>");
+            tmp_str = tmp_str.replaceFirst("</ul>", "");
+            tmp_str = "<div id=\"lyrics\">\r\n<div class=\"lyrisContent\" id=\"question\">\r\n<form id=\"quiz\">\r\n" + tmp_str + "\r\n</ul>\r\n" +
+                    "<input value=\"Get Score\" onclick=\"getScore()\" type=\"button\">" +
+                    "<input value=\"Get Answers\" onclick=\"getAnswers()\" type=\"button\">" +
+                    "<input value=\"Rest Answers\" type=\"reset\" onclick=\"resetAnswers()\">" +                    
+                    "\r\n\r\n</form></div>\r\n<div class=\"lyrisContent\" id=\"script\">";
+            tmp_str = tmp_str.replaceAll("value=\".\"", "value=\"0\"");
+            tmp_str = tmp_str.trim();
+            
+            tmp_str = tmp_str.replaceAll("<li>A ", "<li>a.");
+            tmp_str = tmp_str.replaceAll("<li>B ", "<li>b.");
+            tmp_str = tmp_str.replaceAll("<li>C ", "<li>c.");
+            tmp_str = tmp_str.replaceAll("<li>D ", "<li>d.");
+            
+            
+            
+          
+            
+            //writeToFile("D:\\"+save+".csv", arr_data);
+            
+            
+            Document doc1 = Jsoup.connect(path.replace("_qu.htm", "_scr.htm"))
+              .data("query", "Java")
+              .data("parameter1","\u00E8")                   
+              .header("Content-Type","application/x-www-form-urlencoded;charset=UTF-8")
+              .userAgent("Mozilla")
+              .cookie("PHPSESSID", "ckj5n9leqr5pdjo9s08m47k3k5")
+              .timeout(10000)        
+              .get(); 
+            
+            String tmp_str_02 = "";
+            Elements dataScript = doc1.select("table > tbody > tr > td > table > tbody > tr > td > table > tbody > tr > td > p");            
+            for (Element data : dataScript) {
+                //tmp_str_01 = tmp_str_01 + data.attr("src");
+                tmp_str_02 += data.html() + "\r\n";
+                //System.out.println(data.html() + "");
+            }                
+            
+            tmp_str_02 = tmp_str_02.replaceAll("<br />", "");
+            tmp_str_02 += "</div></div>";
+            System.out.println(tmp_str_01 + "\n\n" + tmp_str + "\n\n" + tmp_str_02 + "\n\n");
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Bizocean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }     
+        
