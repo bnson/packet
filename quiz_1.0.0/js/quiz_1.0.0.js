@@ -65,3 +65,10 @@ function resetAnswers() {
 
 }
 
+$(function() {
+$('#quiz li').click(function() {
+      $(this).find('input:radio').prop('checked', true);
+});
+}); 
+
+
