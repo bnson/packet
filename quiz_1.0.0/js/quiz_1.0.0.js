@@ -37,7 +37,7 @@ function getAnswers() {
 	
 	for (i=0; i<quest.length; i++) {
 		var idx = i*chois.length/quest.length;
-		for (j=idx; j<idx+3; j++) {
+		for (j=idx; j<idx+chois.length/quest.length; j++) {
 			if (chois[j].value == "1") {
 				correctAnswers += "\tQestion " + (i+1) + ": " + answer.eq(j).text() + "\r\n";
 				answer.eq(j).css({'color':'#0066ff'}); 
