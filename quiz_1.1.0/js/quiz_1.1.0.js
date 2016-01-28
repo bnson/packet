@@ -149,7 +149,8 @@ function inputGetScore() {
 		if (answer[i].value == answer[i].name) {
 			score++;
 		} else {
-			answer.eq(i).css({'color':'#fff !important','background-color':'#f00'}); 
+			//answer.eq(i).css({'color':'#fff !important','background-color':'#f00'}); 
+			answer.eq(i).attr('style', 'color: #fff !important;background-color:#f00');
 		}
 	}			
 	
@@ -166,11 +167,13 @@ function inputGetAnswers() {
 
 	for (i=0; i<answer.length; i++) {
 		if (answer[i].value == answer[i].name) {
-			answer.eq(i).css({'color':'#fff !important','background-color':'#0080FF'}); 
+			//answer.eq(i).css({'color':'#fff !important','background-color':'#0080FF'}); 
+			answer.eq(i).attr('style', 'color: #fff !important;background-color:#0080FF');
 		}
 		else {
 			if (answer[i].value.indexOf("(") == -1) {
-				answer.eq(i).css({'color':'#fff !important','background-color':'#f00'}); 
+				//answer.eq(i).css({'color':'#fff !important','background-color':'#f00'}); 
+				answer.eq(i).attr('style', 'color: #fff !important;background-color:#f00');
 				answer[i].value = answer[i].value + ' (' + answer[i].name + ') ';
 			}
 		}
