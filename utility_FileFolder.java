@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bnson.comrobot;
+package comRobot;
 
+/**
+ *
+ * @author bnson
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -54,8 +58,8 @@ public class utility_FileFolder {
             try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    records += line;
-                    System.out.println("line: " + line);
+                    records += line + " ";
+                    //System.out.println("line: " + line);
                 }
             }
             return records;
@@ -88,8 +92,8 @@ public class utility_FileFolder {
         BufferedWriter fbw = null;
         OutputStreamWriter writer = null;
         try {
-            String linkFile = folderPath + "\\" + fileName.replaceAll("[\\\\/*?\"<>|:]", "");
-            System.out.println("wirteFile: " + linkFile);
+            String linkFile = folderPath + "/" + fileName.replaceAll("[\\\\/*?\"<>|:]", "");
+            //System.out.println("wirteFile: " + linkFile);
 
             writer = new OutputStreamWriter(new FileOutputStream(linkFile, true), "UTF-8");
 
@@ -118,8 +122,8 @@ public class utility_FileFolder {
         BufferedWriter fbw = null;
         OutputStreamWriter writer = null;
         try {
-            String linkFile = folderPath + "\\" + fileName.replaceAll("[\\\\/*?\"<>|:]", "") + ".txt";
-            System.out.println("wirteFile: " + linkFile);
+            String linkFile = folderPath + "/" + fileName.replaceAll("[\\\\/*?\"<>|:]", "") + ".txt";
+            //System.out.println("wirteFile: " + linkFile);
 
             writer = new OutputStreamWriter(new FileOutputStream(linkFile, false), "UTF-8");
 
@@ -152,7 +156,7 @@ public class utility_FileFolder {
 
         //adaptor for comparing files
         Collections.sort(listOfFiles, new Comparator<File>() {
-            private final Comparator<String> NATURAL_SORT = new WindowsExplorerComparator();
+            private final Comparator<String> NATURAL_SORT = new WindowsExplorerStringComparator();
 
             @Override
             @SuppressWarnings("empty-statement")
@@ -177,7 +181,7 @@ public class utility_FileFolder {
 
         //adaptor for comparing files
         Collections.sort(listOfFiles, new Comparator<File>() {
-            private final Comparator<String> NATURAL_SORT = new WindowsExplorerComparator();
+            private final Comparator<String> NATURAL_SORT = new WindowsExplorerStringComparator();
 
             @Override
             @SuppressWarnings("empty-statement")

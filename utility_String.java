@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bnson.comrobot;
+package comRobot;
 
 import java.text.Normalizer;
 import java.util.regex.Pattern;
