@@ -1,0 +1,3750 @@
+importPackage(javax.swing);
+function valid(Vorname, Land_Lookup){
+
+	var content = Vorname;
+	var regex = /[А-Я]/gi;
+	if (regex.test(content) && (Land_Lookup == "LT" || Land_Lookup == "LV")){
+		JOptionPane.showMessageDialog(null,"Vorname - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	var myArr = ["'s","'t","aan","aan de","aan den","aan der","aan het","am","an de","an den","an der","auf","auf dem","auf den","auf der","auf'm","auf-m","aufm","aus","aus dem","aus den","aus der","aus'm","d'","d.","da","dagli","dai","dal","dall'","dalla","das","de","de la","de las","de le","de li","de los","de'","degli","dei","del","dell'","della","delle","dello","dem","den","der","des","di","do","dos","du","gli","het","im","in","in dem","in den","in der","in't","jun","l'","la","las","le","les","li","lo","los","op","op de","op den","op der","sen","ten","ter","thor","tor","tot","uit","uit den","v.","v. d","v. d.","v. den","v. der","v.d.","van","van de","van den","van der","van het","van't","vande","vanden","ver","vom","von","von de","von dem","von den","von der","von und zu","von und zu der","von und zum","von und zur","von zu","von zum","von zur","zu","zum","zur"];
+
+	var content = Vorname;
+	var rs = upperCaseNoneException(content);
+	rs = rs.replace("'S ", "'s ");
+	rs = rs.replace("'T ", "'t ");
+	for (i=0;i<myArr.length;i++){
+		rs = rs.replace(myArr[i].substring(0,1).toUpperCase()+myArr[i].substring(1,myArr[i].length)+" ", myArr[i]+" ");
+	}
+	rs = rs.replace(/ u. /gi, " u. ");
+	rs = rs.replace(/ und /gi, " und ");
+	return rs;
+}
+
+function upperCaseNoneException(str){
+	var value = str.toLowerCase().replace(/\b\w/g, function(match){return match.toUpperCase();});
+	value = value.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+
+	//var myArr = [" -","- "," - "," U. "];
+	var myArr = [" -","- "," - "];
+	for(i=0; i<myArr.length; i++)
+	{
+		//if(myArr[i] == " U. ") value = value.replace(myArr[i], " und ");
+		//else 
+		value = value.replace(myArr[i], "-");
+	}
+	return value;
+}
+
+importPackage(javax.swing);
+function valid(Nachname, Land_Lookup){
+
+	var content = Nachname;
+	var regex = /[А-Я]/gi;
+	if (regex.test(content) && (Land_Lookup == "LT" || Land_Lookup == "LV")){
+		JOptionPane.showMessageDialog(null,"Nachname - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	var myArr = ["'s","'t","aan","aan de","aan den","aan der","aan het","am","an de","an den","an der","auf","auf dem","auf den","auf der","auf'm","auf-m","aufm","aus","aus dem","aus den","aus der","aus'm","d'","d.","da","dagli","dai","dal","dall'","dalla","das","de","de la","de las","de le","de li","de los","de'","degli","dei","del","dell'","della","delle","dello","dem","den","der","des","di","do","dos","du","gli","het","im","in","in dem","in den","in der","in't","jun","l'","la","las","le","les","li","lo","los","op","op de","op den","op der","sen","ten","ter","thor","tor","tot","uit","uit den","v.","v. d","v. d.","v. den","v. der","v.d.","van","van de","van den","van der","van het","van't","vande","vanden","ver","vom","von","von de","von dem","von den","von der","von und zu","von und zu der","von und zum","von und zur","von zu","von zum","von zur","zu","zum","zur"];
+
+	var content = Nachname;
+	var rs = upperCaseNoneException(content);
+	rs = rs.replace("'S ", "'s ");
+	rs = rs.replace("'T ", "'t ");
+	for(i=0;i<myArr.length;i++){
+		rs = rs.replace(myArr[i].substring(0,1).toUpperCase()+myArr[i].substring(1,myArr[i].length)+" ", myArr[i]+" ");
+	}
+	rs = rs.replace(/ u. /gi, " u. ");
+	rs = rs.replace(/ und /gi, " und ");
+	return rs;
+
+}
+
+function upperCaseNoneException(str){
+	var value = str.toLowerCase().replace(/\b\w/g, function(match){return match.toUpperCase();});
+	value = value.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+
+	//var myArr = [" -","- "," - "," U. "];
+	var myArr = [" -","- "," - "];	
+	for(i=0; i<myArr.length; i++)
+	{
+		//if(myArr[i] == " U. ") value = value.replace(myArr[i], " und ");
+		//else value = value.replace(myArr[i], "-");
+		value = value.replace(myArr[i], "-");
+	}
+	return value;
+}
+
+importPackage(javax.swing);
+function valid(Anrede, Vorname, Anrede_Lookup){
+
+	var content = Anrede.toLowerCase();
+	var vname = Vorname.toLowerCase();
+
+	if (content != "" && vname != "" && (vname.indexOf(" u. ") != -1 || vname.indexOf(" und ") != -1)) {
+		return "";
+	}
+
+	if (content == "" && vname != "" && vname.indexOf(" u. ") == -1 && Anrede_Lookup != "") {
+		content = Anrede_Lookup.toLowerCase();
+	}
+
+	var result = "";
+
+	var i_str = content;
+	i_str = remove_space(i_str);
+
+	var pattern_anrede = /^(1|2|herr|frau)$/;
+
+	if (i_str != "" && !pattern_anrede.test(i_str)) {
+		JOptionPane.showMessageDialog(null, "Anrede - Gia tri nhap khong hop le, chi duoc nhap '1' hoac ' 2' hoac 'Herr' hoac 'Frau'!");
+		return false;
+	} else {
+		result = i_str.replace("1","Frau").replace("2","Herr").replace("frau","Frau").replace("herr","Herr");
+	}
+	
+	return result;
+
+}
+
+function remove_space(str) 
+{
+    return str.replace(/\s+/gi,"");
+}
+
+importPackage(javax.swing);
+function valid(Titel, Land_Lookup){
+	var content = Titel;
+
+	var regex = /[А-Я]/gi;
+	if (regex.test(content) && (Land_Lookup == "LT" || Land_Lookup == "LV")){
+		JOptionPane.showMessageDialog(null,"Titel - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	return trimSpace(content);
+}
+
+function trimSpace(str) {
+    return str.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+importPackage(javax.swing);
+function valid(Strasse, Land){
+	var contents = Strasse;
+
+	var regex = /[А-Я]/gi;
+	if (regex.test(contents) && (Land == "LT" || Land == "LV")){
+		JOptionPane.showMessageDialog(null,"Strasse - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	var rs = contents.substring(0,1).toUpperCase() + contents.substring(1,contents.length);
+	return rs.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+}
+
+function trimSpace(str) {
+    return str.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+importPackage(javax.swing);
+function valid(PLZ, Land, Land_Lookup){
+	var content = PLZ.toUpperCase();
+
+	var regex = /[?-?]/gi;
+	if (regex.test(content) && (Land_Lookup == "LT" || Land_Lookup == "LV")){
+		JOptionPane.showMessageDialog(null,"PLZ - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+
+	var regNum = /^[0-9]+$/;
+
+	if (content == "") {
+		return true;
+	}
+	if (Land == ""){
+		if(/^(?:([d]{5}-[\d]{4})|([\d]{2}-[\d]{3})|([\d]{4,6})|([\d]{4}[ ][A-Z]{2})|([A-Z][\d][ ][\d][A-Z]{2})|([A-Z][\d]{2}[ ][\d][A-Z]{2})|([A-Z][\d][A-Z][ ][\d][A-Z]{2})|([A-Z]{2}[\d][ ][\d][A-Z]{2})|([A-Z]{2}[\d]{2}[ ][\d][A-Z]{2})|([A-Z]{2}[\d][A-Z][ ][\d][A-Z]{2})|([\d]{4}[\-][\d]{3})|([A-Z][\d][A-Z][ ][\d][A-Z][\d])|([A-Z][\d]{4}[A-Z]{3})|([A-Z]{3}[ ][\d]{2})|([A-Z]{2} \d{5})|([A-Z0-9]{2,4}[ ][A-Z0-9]{3})|([A-Z0-9]{3}[ ][A-Z0-9]{3})|(\d{2}-\d{3})|(\d{3}[ ]\d{2})|(\d{3}[ ]\d{3})|(\d{4}-\d{3}))$/.test(content)) return content;
+		JOptionPane.showMessageDialog(null,"PLZ - Khong dung format cua XML");
+ 		return false;	
+		
+	}
+
+
+	switch (Land) {
+		case "DE":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land DE - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land DE - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//------------------------------------------------------------------------------------------
+		case "AT":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land AT - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land AT - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "BE":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land BE - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land BE - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "BG":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land BG - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land BG - PLZ must have 4 number character!");
+				return false;
+			}
+			break;		
+		//----------------------------------------------------------------------------------------------
+		case "CZ":
+			//var regNL = /^[0-9][0-9][0-9][ ][0-9][0-9]$/;
+			var regNL = /^[0-9][0-9][0-9][0-9][0-9]$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land CZ - PLZ invalid!");
+				return false;			
+			}
+			break;		
+		//-------------------------------------------------------------------------------------------
+		case "ES":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land ES - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land ES - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "FR":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land FR - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land FR - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//---------------------------------------------------------------------------------------------
+		case "GB":
+			var regNL = /^\w{5,7}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land GB - PLZ invalid!");
+				return false;			
+			}
+			break;			
+		//-------------------------------------------------------------------------------------------
+		case "HR":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land HR - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land HR - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "HU":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land HU - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land HU - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "LT":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land LT - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land LT - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "LV":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land LV - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land LV - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//---------------------------------------------------------------------------------------------
+		case "NL":
+			//var regNL = /^[0-9][0-9][0-9][0-9][ ][a-zA-Z][a-zA-Z]$/;
+			var regNL = /^[0-9][0-9][0-9][0-9][a-zA-Z][a-zA-Z]$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land NL - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "PL":
+			//var regNL = /^[0-9][0-9][-][0-9][0-9][0-9]$/;
+			var regNL = /^[0-9][0-9][0-9][0-9][0-9]$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land PL - PLZ invalid!");
+				return false;			
+			}
+			break;			
+		//----------------------------------------------------------------------------------------
+		case "RO":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land RO - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 6) {
+				JOptionPane.showMessageDialog(null, "Land RO - PLZ must have 6 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "RU":
+			var regNL = /^\d{6}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land RU - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "SI":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land SI - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land SI - PLZ must have 4 number character!");
+				return false;
+			}
+			break;				
+		//-------------------------------------------------------------------------------------------
+		case "SK":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land SK - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land SK - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "CH":
+			var regNL = /^\d{4}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land CH - PLZ invalid!");
+				return false;			
+			}
+			break;		
+		//-------------------------------------------------------------------------------------------
+		case "ET":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land ET - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land ET - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "BA":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land BA - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land BA - PLZ must have 5 number character!");
+				return false;
+			}
+			break;			
+		//-------------------------------------------------------------------------------------------
+		case "CA":
+			var regNL = /^\w{6}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land CA - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "DK":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land DK - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land DK - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "EE":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land EE - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land EE - PLZ must have 5 number character!");
+				return false;
+			}
+			break;	
+		//-------------------------------------------------------------------------------------------
+		case "FI":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land FI - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land FI - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "GR":
+			var regNL = /^\d{5}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land GR - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		//IE
+		//-------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------
+		case "IL":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land IL - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land IL - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "IT":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land IT - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land IT - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------		
+		case "LI":
+			var regNL = /^\d{4}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land LI - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "LU":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land LU - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land LU - PLZ must have 4 number character!");
+				return false;
+			}
+			break;					
+		//-------------------------------------------------------------------------------------------
+		case "MK":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land MK - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land MK - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "MC":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land MC - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land MC - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "NO":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land NO - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land NO - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "PT":
+			//var regNL = /^[0-9][0-9][0-9][ ][0-9][0-9][0-9]$/;
+			var regNL = /^\d{7}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land PT - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "SE":
+			var regNL = /^[0-9][0-9][0-9][0-9][0-9]$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land SE - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "YU":
+			var regNL = /^\d{6}$/;
+			if (!content.match(regNL)) {
+				JOptionPane.showMessageDialog(null, "Land YU - PLZ invalid!");
+				return false;			
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "TR":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land TR - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land TR - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "UA":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land UA - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 5) {
+				JOptionPane.showMessageDialog(null, "Land UA - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		//USA
+		//-------------------------------------------------------------------------------------------
+		case "BY":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land BY - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 6) {
+				JOptionPane.showMessageDialog(null, "Land BY - PLZ must have 5 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		case "CY":
+			if (!content.match(regNum)) {
+				JOptionPane.showMessageDialog(null, "Land CY - PLZ only input number character!");
+				return false;			
+			}
+			if (content.length != 4) {
+				JOptionPane.showMessageDialog(null, "Land CY - PLZ must have 4 number character!");
+				return false;
+			}
+			break;
+		//-------------------------------------------------------------------------------------------
+		default:
+			if(/^(?:([d]{5}-[\d]{4})|([\d]{2}-[\d]{3})|([\d]{4,6})|([\d]{4}[ ][A-Z]{2})|([A-Z][\d][ ][\d][A-Z]{2})|([A-Z][\d]{2}[ ][\d][A-Z]{2})|([A-Z][\d][A-Z][ ][\d][A-Z]{2})|([A-Z]{2}[\d][ ][\d][A-Z]{2})|([A-Z]{2}[\d]{2}[ ][\d][A-Z]{2})|([A-Z]{2}[\d][A-Z][ ][\d][A-Z]{2})|([\d]{4}[\-][\d]{3})|([A-Z][\d][A-Z][ ][\d][A-Z][\d])|([A-Z][\d]{4}[A-Z]{3})|([A-Z]{3}[ ][\d]{2})|([A-Z]{2} \d{5})|([A-Z0-9]{2,4}[ ][A-Z0-9]{3})|([A-Z0-9]{3}[ ][A-Z0-9]{3})|(\d{2}-\d{3})|(\d{3}[ ]\d{2})|(\d{3}[ ]\d{3})|(\d{4}-\d{3}))$/.test(content) || content == "") 	return trimSpace(content);
+		JOptionPane.showMessageDialog(null,"PLZ - Khong dung format cua XML");
+ 		return false;
+	}	
+
+	return trimSpace(content);
+
+}
+
+function trimSpace(str) {
+    return str.replace(/^\s*/, "").replace(/\s*$/, "");
+}
+
+importPackage(javax.swing);
+function valid(ORT, Land){
+	var content = ORT;
+
+	var regex = /[А-Я]/gi;
+	if (regex.test(content) && (Land == "LT" || Land == "LV")){
+		JOptionPane.showMessageDialog(null,"ORT - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	var rs = content.substring(0,1).toUpperCase() + content.substring(1,content.length);
+	return rs.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+	//return update_Ort(content);
+}
+
+function update_Ort(str)
+{
+     str = str.toLowerCase().replace( /\b((m)(a?c))?(\w)/g,
+                         function($1, $2, $3, $4, $5) {
+                              if($2){
+                                   return $3.toUpperCase()+$4+$5.toUpperCase();
+                              } 
+                              return $1.toUpperCase(); 
+                              });
+     var contents = str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+	//---------------------------------
+	//var myArr = [" -","- "," - "];
+	var myArr = [];
+	for (var i = 0; i < myArr.length; i++)
+	{
+		var match = new RegExp(myArr[i], "ig");
+		if (myArr[i] == " U. ") {	contents = contents.replace(match," u. "); }
+		else { contents = contents.replace(match,"-"); }
+	}
+	return contents;
+}
+
+function valid(Land, Land_Lookup){
+	var content = Land_Lookup;
+	if (content == "Other") {
+		return "";
+	}
+	return content;
+}
+
+importPackage(javax.swing);
+function valid(Telefonnummer, Land_Lookup){
+
+	var content = Telefonnummer;
+	var v_land = Land_Lookup;
+	var reg = /^[0-9]+$/;	
+	if (!content.match(reg) && content != "") {
+		JOptionPane.showMessageDialog(null, "Only input number character!");
+		return false;
+	}
+	var temp=content.substring(0,1);
+	if(temp!="0"){
+		return content;
+	}
+	if (content == "") {
+		return true;
+	}	
+	//-------------------------------------------------------
+	switch (v_land)
+	{
+		case "AF":
+			var reg = /^(?:|0093)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AE":
+			var reg = /^(?:|00971)(?:|0)(?:55|50)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AG":
+			var reg = /^(?:|001268)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AL":
+			var reg = /^(?:|00355)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AM":
+			var reg = /^(?:|00374)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AO":
+			var reg = /^(?:|00244)(?:|0)(?:91|92)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AR":
+			var reg = /^(?:|0054)(?:|0)(?:15|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AT":
+			var reg = /^(?:|0043)(?:|0)(?:699|650|660|664|676|680|681|688)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AU":
+			var reg = /^(?:|0061)(?:|0)(?:4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "AZ":
+			var reg = /^(?:|00994)(?:|0)(?:55|50|70)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BA":
+			var reg = /^(?:|00387)(?:|0)(?:61|62|63|65|66)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BD":
+			var reg = /^(?:|00880)(?:|0)(?:19|011|015|16|17|181)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BE":
+			var reg = /^(?:|0032)(?:|0)(?:49|47|48)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BF":
+			var reg = /^(?:|00226)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BG":
+			var reg = /^(?:|00359)(?:|0)(?:89|48|87|88)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BH":
+			var reg = /^(?:|00973)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BI":
+			var reg = /^(?:|00257)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BJ":
+			var reg = /^(?:|00229)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BN":
+			var reg = /^(?:|00673)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BO":
+			var reg = /^(?:|00591)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BS":
+			var reg = /^(?:|001242)(?:|0)(?:55|35|45)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BT":
+			var reg = /^(?:|00975)(?:|0)(?:17)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BW":
+			var reg = /^(?:|00267)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BY":
+			var reg = /^(?:|00375)(?:|0)(?:44|25|29|33)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "BZ":
+			var reg = /^(?:|00501)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CD":
+			var reg = /^(?:|00243)(?:|0)(?:22|78|81|84|86|88|90|99|94)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CG":
+			var reg = /^(?:|00242)(?:|0)(?:5|4|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CH":
+			var reg = /^(?:|0041)(?:|0)(?:78|74|76|77|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CL":
+			var reg = /^(?:|0056)(?:|0)(?:98|97|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CN":
+			var reg = /^(?:|0086)(?:|0)(?:13|15)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CO":
+			var reg = /^(?:|0057)(?:|0)(?:31|30)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CR":
+			var reg = /^(?:|00506)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CU":
+			var reg = /^(?:|0053)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CV":
+			var reg = /^(?:|00238)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CY":
+			var reg = /^(?:|00357)(?:|0)(?:99|96|97)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "CZ":
+			var reg = /^(?:|00420)(?:|0)(?:73|60|72|77)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "DE":
+			var reg = /^(?:|0049)(?:|0)(?:17|15|16)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "DJ":
+			var reg = /^(?:|00253)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "DK":
+			var reg = /^(?:|0045)(?:|0)(?:60|31|40|41|42|61|50|51|52|53)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "DM":
+			var reg = /^(?:|001767)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "EC":
+			var reg = /^(?:|00593)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "EE":
+			var reg = /^(?:|00372)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "EG":
+			var reg = /^(?:|0020)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ER":
+			var reg = /^(?:|00291)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ES":
+			var reg = /^(?:|0034)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ET":
+			var reg = /^(?:|00251)(?:|0)(?:91)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "FI":
+			var reg = /^(?:|00358)(?:|0)(?:50|4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "FJ":
+			var reg = /^(?:|00679)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "FR":
+			var reg = /^(?:|0033)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GB":
+			var reg = /^(?:|0044)(?:|0)(?:75|77|78|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GD":
+			var reg = /^(?:|001473)(?:|0)(?:41)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GE":
+			var reg = /^(?:|00995)(?:|0)(?:44|55|57|58|74|77|90|91|93|95|97|98|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GH":
+			var reg = /^(?:|00233)(?:|0)(?:28)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GI":
+			var reg = /^(?:|00350)(?:|0)(?:58)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GM":
+			var reg = /^(?:|00220)(?:|0)(?:7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GN":
+			var reg = /^(?:|00224)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GQ":
+			var reg = /^(?:|00240)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GR":
+			var reg = /^(?:|0030)(?:|0)(?:693|694|697|699)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GT":
+			var reg = /^(?:|00502)(?:|0)(?:4|5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GW":
+			var reg = /^(?:|00245)(?:|0)(?:6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "GY":
+			var reg = /^(?:|00592)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "HK":
+			var reg = /^(?:|00852)(?:|0)(?:5|6|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "HN":
+			var reg = /^(?:|00504)(?:|0)(?:3|8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "HR":
+			var reg = /^(?:|00385)(?:|0)(?:91|95|98|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "HU":
+			var reg = /^(?:|0036)(?:|0)(?:20|30|70)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ID":
+			var reg = /^(?:|0062)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IE":
+			var reg = /^(?:|00353)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IL":
+			var reg = /^(?:|00972)(?:|0)(?:54|5|50|52|57)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IN":
+			var reg = /^(?:|0091)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IR":
+			var reg = /^(?:|0098)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IS":
+			var reg = /^(?:|00354)(?:|0)(?:6|8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "IT":
+			var reg = /^(?:|0039)(?:|0)(?:310|31100|31101|31105|313|319|320|322|323|327|328|329|330|331|333|334|335|336|337|338|339|341|343|345|346|347|348|349|350|360|361|362|363|366|368|370340|373|377|380|388|389|390|391|392|393|397)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "JO":
+			var reg = /^(?:|00962)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "JP":
+			var reg = /^(?:|0081)(?:|0)(?:70|80|90)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KE":
+			var reg = /^(?:|00254)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KG":
+			var reg = /^(?:|00996)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KH":
+			var reg = /^(?:|00855)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KM":
+			var reg = /^(?:|00269)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KR":
+			var reg = /^(?:|0082)(?:|0)(?:11|10|16|17|18|19)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KW":
+			var reg = /^(?:|00965)(?:|0)(?:6|7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "KZ":
+			var reg = /^(?:|007)(?:|0)(?:70|777)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LA":
+			var reg = /^(?:|00856)(?:|0)(?:20)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LB":
+			var reg = /^(?:|00961)(?:|0)(?:3|70|71)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LI":
+			var reg = /^(?:|00423)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LK":
+			var reg = /^(?:|0094)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LS":
+			var reg = /^(?:|00266)(?:|0)(?:58|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LT":
+			var reg = /^(?:|00370)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LU":
+			var reg = /^(?:|00352)(?:|0)(?:621|628|661|668|691|698)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LV":
+			var reg = /^(?:|00371)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "LY":
+			var reg = /^(?:|00218)(?:|0)(?:91)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MA":
+			var reg = /^(?:|00212)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MC":
+			var reg = /^(?:|00377)(?:|0)(?:4|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MD":
+			var reg = /^(?:|00373)(?:|0)(?:65|68|69|76|78|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MG":
+			var reg = /^(?:|00261)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MK":
+			var reg = /^(?:|00389)(?:|0)(?:70|71|72|75|76|77|78)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ML":
+			var reg = /^(?:|00223)(?:|0)(?:3|4|5|6|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MM":
+			var reg = /^(?:|0095)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MN":
+			var reg = /^(?:|00976)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MO":
+			var reg = /^(?:|00853)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MR":
+			var reg = /^(?:|00222)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MT":
+			var reg = /^(?:|00356)(?:|0)(?:77|79|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MU":
+			var reg = /^(?:|00230)(?:|0)(?:7|8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MV":
+			var reg = /^(?:|00960)(?:|0)(?:7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MW":
+			var reg = /^(?:|00265)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MX":
+			var reg = /^(?:|0052)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MY":
+			var reg = /^(?:|0060)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "MZ":
+			var reg = /^(?:|00258)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NG":
+			var reg = /^(?:|00234)(?:|0)(?:80|90)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NI":
+			var reg = /^(?:|00505)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NL":
+			var reg = /^(?:|0031)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NO":
+			var reg = /^(?:|0047)(?:|0)(?:4|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NP":
+			var reg = /^(?:|00977)(?:|0)(?:98)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NR":
+			var reg = /^(?:|00674)(?:|0)(?:555)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "NZ":
+			var reg = /^(?:|0064)(?:|0)(?:20|21|22|24|25|27|28|29)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "OM":
+			var reg = /^(?:|00968)(?:|0)(?:968)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PA":
+			var reg = /^(?:|00507)(?:|0)(?:4|5|6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PE":
+			var reg = /^(?:|0051)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PG":
+			var reg = /^(?:|00675)(?:|0)(?:68|69)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PH":
+			var reg = /^(?:|0063)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PK":
+			var reg = /^(?:|0092)(?:|0)(?:300|301|302|303|304|306|307|308|309|320|322|323|331|321|332|333|334|335|342|343|344|345|346)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PL":
+			var reg = /^(?:|0048)(?:|0)(?:50|51|60|66|69|72|78|79|88)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PT":
+			var reg = /^(?:|00351)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "PY":
+			var reg = /^(?:|00595)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "QA":
+			var reg = /^(?:|00974)(?:|0)(?:3|5|6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "RO":
+			var reg = /^(?:|0040)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "RU":
+			var reg = /^(?:|007)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "RW":
+			var reg = /^(?:|00250)(?:|0)(?:08)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SA":
+			var reg = /^(?:|00966)(?:|0)(?:59|56|55|50)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SC":
+			var reg = /^(?:|00248)(?:|0)(?:5|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SD":
+			var reg = /^(?:|00249)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SE":
+			var reg = /^(?:|0046)(?:|0)(?:70|73|76)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SG":
+			var reg = /^(?:|0065)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SI":
+			var reg = /^(?:|00386)(?:|0)(?:609|40|41|30|31)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SK":
+			var reg = /^(?:|00421)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SL":
+			var reg = /^(?:|00232)(?:|0)(?:7|33|30|23)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SM":
+			var reg = /^(?:|00378)(?:|0)(?:66)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SN":
+			var reg = /^(?:|00221)(?:|0)(?:5|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SR":
+			var reg = /^(?:|00597)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SV":
+			var reg = /^(?:|00503)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SY":
+			var reg = /^(?:|00963)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "SZ":
+			var reg = /^(?:|00268)(?:|0)(?:60)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TG":
+			var reg = /^(?:|00228)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TH":
+			var reg = /^(?:|0066)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TJ":
+			var reg = /^(?:|00992)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TN":
+			var reg = /^(?:|00216)(?:|0)(?:2|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TP":
+			var reg = /^(?:|00670)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TR":
+			var reg = /^(?:|0090)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TW":
+			var reg = /^(?:|00886)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "TZ":
+			var reg = /^(?:|00255)(?:|0)(?:74)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "UA":
+			var reg = /^(?:|00380)(?:|0)(?:68|9|67|66|63|50|39)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "UG":
+			var reg = /^(?:|00256)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "UY":
+			var reg = /^(?:|00598)(?:|0)(?:99|97|98|94|95|96)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "UZ":
+			var reg = /^(?:|00998)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "VA":
+			var reg = /^(?:|0039)(?:|0)(?:373|362|363|366|368|370|340|377|380|388|389|390|391|392|393|397|310|31100|31101|31105|313|319|320|322|323|327|328|329|330|331|333|334|335|336|337|338|339|341|343|345|346|347|348|349|350|360|361)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "VE":
+			var reg = /^(?:|0058)(?:|0)(?:4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "VN":
+			var reg = /^(?:|0084)(?:|0)(?:12|16|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "VU":
+			var reg = /^(?:|00678)(?:|0)(?:5|4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "WS":
+			var reg = /^(?:|00685)(?:|0)(?:77)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "YE":
+			var reg = /^(?:|00967)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ZA":
+			var reg = /^(?:|0027)(?:|0)(?:8|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ZM":
+			var reg = /^(?:|00260)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+		case "ZW":
+			var reg = /^(?:|00263)(?:|0)(?:91|11|23)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number is mobile!");
+				return false;	
+			}
+			break;		
+
+
+		default:
+			return trimSpace(content);
+	}
+	//-------------------------------------------------------
+	return trimSpace(content);
+}
+
+function checkRegExg(str_land, reg, content) 
+{
+	if (!content.match(reg) && content != "") {
+		return "1";
+	}
+	return "0";
+}
+
+function trimSpace(str)
+{
+    return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g,"");
+}
+
+
+importPackage(javax.swing);
+function checkBirthday(Vorname, Geburtsdatum){
+	var regex = /^(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])02((19|[2-9]\d)\d{2}))|(2902((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/
+	var chk;
+	var temp = Geburtsdatum.replace(/ /g,'');
+
+	if(temp=="") return temp;
+
+	if(temp.length==6){
+		chk = checkDate6(temp);
+	}
+
+	else if(temp.length==8){
+		chk = checkDate8(temp);
+	}
+	if(Vorname.indexOf(" u. ") != -1 || Vorname.indexOf(" und ") != -1) {
+		return "";
+	}
+	if(regex.test(chk)==false){
+		JOptionPane.showMessageDialog(null, "Nhập sai Birthday","Thông báo",JOptionPane.YES_NO_OPTION);
+		return false;
+	}
+
+	var date = new Date();
+	var dd = date.getDate();
+	var mm = date.getMonth();
+	var yy = date.getFullYear();
+	var dd1 = chk.substring(0, 2);
+	var mm1 = chk.substring(2, 4);
+	var yy1 = chk.substring(4, 8);
+	var curDate = new Date(yy, mm, dd);
+	var inputDate = new Date(yy1,mm1-1,dd1);
+
+	if(curDate<inputDate){
+		JOptionPane.showMessageDialog(null, "Birthday không được lớn hơn ngày hiện tại","Thông báo",JOptionPane.YES_NO_OPTION);
+		return false;
+	}
+	return chk;
+}
+
+//Function check 6 digits
+function checkDate6(Day){
+	var date = new Date();
+	var yy = date.getFullYear() + '';
+	yy = yy.substring(2,4)*1 + 1;
+	var d = Day.substring(0, 2);
+	var m = Day.substring(2, 4);
+	var y = Day.substring(4, 6);
+
+	if(y > yy) y = 19+y;
+	else y = 20+y;
+
+	return d+m+y;
+}
+
+//Function check 8 digits
+function checkDate8(Day){
+	var d = Day.substring(0, 2);
+	var m = Day.substring(2, 4);
+	var y = Day.substring(4, 8);
+
+	return d+m+y;
+}
+
+importPackage(javax.swing);
+function valid(Mobilfunknummer, Land_Lookup){
+
+	var content = Mobilfunknummer;
+	var v_land = Land_Lookup;
+
+	var reg = /^[0-9]+$/;
+	if (!content.match(reg) && content != "") {
+		JOptionPane.showMessageDialog(null, "Only input number character!");
+		return false;
+	}
+	var temp=content.substring(0,1);
+	if(temp!="0"){
+		return content;
+	}
+	
+	//-------------------------------------------------------
+	switch (v_land)
+	{
+		case "AF":
+			var reg = /^(?:|0093)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AE":
+			var reg = /^(?:|00971)(?:|0)(?:55|50)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AG":
+			var reg = /^(?:|001268)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AL":
+			var reg = /^(?:|00355)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AM":
+			var reg = /^(?:|00374)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AO":
+			var reg = /^(?:|00244)(?:|0)(?:91|92)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AR":
+			var reg = /^(?:|0054)(?:|0)(?:15|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AT":
+			var reg = /^(?:|0043)(?:|0)(?:699|650|660|664|676|680|681|688)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AU":
+			var reg = /^(?:|0061)(?:|0)(?:4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "AZ":
+			var reg = /^(?:|00994)(?:|0)(?:55|50|70)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BA":
+			var reg = /^(?:|00387)(?:|0)(?:61|62|63|65|66)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BD":
+			var reg = /^(?:|00880)(?:|0)(?:19|011|015|16|17|181)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BE":
+			var reg = /^(?:|0032)(?:|0)(?:49|47|48)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BF":
+			var reg = /^(?:|00226)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BG":
+			var reg = /^(?:|00359)(?:|0)(?:89|48|87|88)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BH":
+			var reg = /^(?:|00973)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BI":
+			var reg = /^(?:|00257)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BJ":
+			var reg = /^(?:|00229)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BN":
+			var reg = /^(?:|00673)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BO":
+			var reg = /^(?:|00591)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BS":
+			var reg = /^(?:|001242)(?:|0)(?:55|35|45)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BT":
+			var reg = /^(?:|00975)(?:|0)(?:17)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BW":
+			var reg = /^(?:|00267)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BY":
+			var reg = /^(?:|00375)(?:|0)(?:44|25|29|33)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "BZ":
+			var reg = /^(?:|00501)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CD":
+			var reg = /^(?:|00243)(?:|0)(?:22|78|81|84|86|88|90|99|94)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CG":
+			var reg = /^(?:|00242)(?:|0)(?:5|4|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CH":
+			var reg = /^(?:|0041)(?:|0)(?:78|74|76|77|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CL":
+			var reg = /^(?:|0056)(?:|0)(?:98|97|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CN":
+			var reg = /^(?:|0086)(?:|0)(?:13|15)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CO":
+			var reg = /^(?:|0057)(?:|0)(?:31|30)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CR":
+			var reg = /^(?:|00506)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CU":
+			var reg = /^(?:|0053)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CV":
+			var reg = /^(?:|00238)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CY":
+			var reg = /^(?:|00357)(?:|0)(?:99|96|97)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "CZ":
+			var reg = /^(?:|00420)(?:|0)(?:73|60|72|77)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "DE":
+			var reg = /^(?:|0049)(?:|0)(?:17|15|16)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "DJ":
+			var reg = /^(?:|00253)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "DK":
+			var reg = /^(?:|0045)(?:|0)(?:60|31|40|41|42|61|50|51|52|53)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "DM":
+			var reg = /^(?:|001767)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "EC":
+			var reg = /^(?:|00593)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "EE":
+			var reg = /^(?:|00372)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "EG":
+			var reg = /^(?:|0020)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ER":
+			var reg = /^(?:|00291)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ES":
+			var reg = /^(?:|0034)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ET":
+			var reg = /^(?:|00251)(?:|0)(?:91)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "FI":
+			var reg = /^(?:|00358)(?:|0)(?:50|4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "FJ":
+			var reg = /^(?:|00679)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "FR":
+			var reg = /^(?:|0033)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GB":
+			var reg = /^(?:|0044)(?:|0)(?:75|77|78|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GD":
+			var reg = /^(?:|001473)(?:|0)(?:41)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GE":
+			var reg = /^(?:|00995)(?:|0)(?:44|55|57|58|74|77|90|91|93|95|97|98|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GH":
+			var reg = /^(?:|00233)(?:|0)(?:28)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GI":
+			var reg = /^(?:|00350)(?:|0)(?:58)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GM":
+			var reg = /^(?:|00220)(?:|0)(?:7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GN":
+			var reg = /^(?:|00224)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GQ":
+			var reg = /^(?:|00240)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GR":
+			var reg = /^(?:|0030)(?:|0)(?:693|694|697|699)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GT":
+			var reg = /^(?:|00502)(?:|0)(?:4|5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GW":
+			var reg = /^(?:|00245)(?:|0)(?:6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "GY":
+			var reg = /^(?:|00592)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "HK":
+			var reg = /^(?:|00852)(?:|0)(?:5|6|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "HN":
+			var reg = /^(?:|00504)(?:|0)(?:3|8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "HR":
+			var reg = /^(?:|00385)(?:|0)(?:91|95|98|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "HU":
+			var reg = /^(?:|0036)(?:|0)(?:20|30|70)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ID":
+			var reg = /^(?:|0062)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IE":
+			var reg = /^(?:|00353)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IL":
+			var reg = /^(?:|00972)(?:|0)(?:54|5|50|52|57)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IN":
+			var reg = /^(?:|0091)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IR":
+			var reg = /^(?:|0098)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IS":
+			var reg = /^(?:|00354)(?:|0)(?:6|8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "IT":
+			var reg = /^(?:|0039)(?:|0)(?:310|31100|31101|31105|313|319|320|322|323|327|328|329|330|331|333|334|335|336|337|338|339|341|343|345|346|347|348|349|350|360|361|362|363|366|368|370340|373|377|380|388|389|390|391|392|393|397)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "JO":
+			var reg = /^(?:|00962)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "JP":
+			var reg = /^(?:|0081)(?:|0)(?:70|80|90)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KE":
+			var reg = /^(?:|00254)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KG":
+			var reg = /^(?:|00996)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KH":
+			var reg = /^(?:|00855)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KM":
+			var reg = /^(?:|00269)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KR":
+			var reg = /^(?:|0082)(?:|0)(?:11|10|16|17|18|19)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KW":
+			var reg = /^(?:|00965)(?:|0)(?:6|7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "KZ":
+			var reg = /^(?:|007)(?:|0)(?:70|777)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LA":
+			var reg = /^(?:|00856)(?:|0)(?:20)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LB":
+			var reg = /^(?:|00961)(?:|0)(?:3|70|71)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LI":
+			var reg = /^(?:|00423)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LK":
+			var reg = /^(?:|0094)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LS":
+			var reg = /^(?:|00266)(?:|0)(?:58|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LT":
+			var reg = /^(?:|00370)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LU":
+			var reg = /^(?:|00352)(?:|0)(?:621|628|661|668|691|698)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LV":
+			var reg = /^(?:|00371)(?:|0)(?:2)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "LY":
+			var reg = /^(?:|00218)(?:|0)(?:91)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MA":
+			var reg = /^(?:|00212)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MC":
+			var reg = /^(?:|00377)(?:|0)(?:4|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MD":
+			var reg = /^(?:|00373)(?:|0)(?:65|68|69|76|78|79)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MG":
+			var reg = /^(?:|00261)(?:|0)(?:3)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MK":
+			var reg = /^(?:|00389)(?:|0)(?:70|71|72|75|76|77|78)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ML":
+			var reg = /^(?:|00223)(?:|0)(?:3|4|5|6|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MM":
+			var reg = /^(?:|0095)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MN":
+			var reg = /^(?:|00976)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MO":
+			var reg = /^(?:|00853)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MR":
+			var reg = /^(?:|00222)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MT":
+			var reg = /^(?:|00356)(?:|0)(?:77|79|99)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MU":
+			var reg = /^(?:|00230)(?:|0)(?:7|8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MV":
+			var reg = /^(?:|00960)(?:|0)(?:7|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MW":
+			var reg = /^(?:|00265)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MX":
+			var reg = /^(?:|0052)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MY":
+			var reg = /^(?:|0060)(?:|0)(?:1)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "MZ":
+			var reg = /^(?:|00258)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NG":
+			var reg = /^(?:|00234)(?:|0)(?:80|90)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NI":
+			var reg = /^(?:|00505)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NL":
+			var reg = /^(?:|0031)(?:|0)(?:6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NO":
+			var reg = /^(?:|0047)(?:|0)(?:4|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NP":
+			var reg = /^(?:|00977)(?:|0)(?:98)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NR":
+			var reg = /^(?:|00674)(?:|0)(?:555)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "NZ":
+			var reg = /^(?:|0064)(?:|0)(?:20|21|22|24|25|27|28|29)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "OM":
+			var reg = /^(?:|00968)(?:|0)(?:968)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PA":
+			var reg = /^(?:|00507)(?:|0)(?:4|5|6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PE":
+			var reg = /^(?:|0051)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PG":
+			var reg = /^(?:|00675)(?:|0)(?:68|69)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PH":
+			var reg = /^(?:|0063)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PK":
+			var reg = /^(?:|0092)(?:|0)(?:300|301|302|303|304|306|307|308|309|320|322|323|331|321|332|333|334|335|342|343|344|345|346)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PL":
+			var reg = /^(?:|0048)(?:|0)(?:50|51|60|66|69|72|78|79|88)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PT":
+			var reg = /^(?:|00351)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "PY":
+			var reg = /^(?:|00595)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "QA":
+			var reg = /^(?:|00974)(?:|0)(?:3|5|6|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "RO":
+			var reg = /^(?:|0040)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "RU":
+			var reg = /^(?:|007)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "RW":
+			var reg = /^(?:|00250)(?:|0)(?:08)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SA":
+			var reg = /^(?:|00966)(?:|0)(?:59|56|55|50)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SC":
+			var reg = /^(?:|00248)(?:|0)(?:5|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SD":
+			var reg = /^(?:|00249)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SE":
+			var reg = /^(?:|0046)(?:|0)(?:70|73|76)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SG":
+			var reg = /^(?:|0065)(?:|0)(?:8|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SI":
+			var reg = /^(?:|00386)(?:|0)(?:609|40|41|30|31)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SK":
+			var reg = /^(?:|00421)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SL":
+			var reg = /^(?:|00232)(?:|0)(?:7|33|30|23)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SM":
+			var reg = /^(?:|00378)(?:|0)(?:66)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SN":
+			var reg = /^(?:|00221)(?:|0)(?:5|6)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SR":
+			var reg = /^(?:|00597)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SV":
+			var reg = /^(?:|00503)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SY":
+			var reg = /^(?:|00963)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "SZ":
+			var reg = /^(?:|00268)(?:|0)(?:60)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TG":
+			var reg = /^(?:|00228)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TH":
+			var reg = /^(?:|0066)(?:|0)(?:8)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TJ":
+			var reg = /^(?:|00992)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TN":
+			var reg = /^(?:|00216)(?:|0)(?:2|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TP":
+			var reg = /^(?:|00670)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TR":
+			var reg = /^(?:|0090)(?:|0)(?:5)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TW":
+			var reg = /^(?:|00886)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "TZ":
+			var reg = /^(?:|00255)(?:|0)(?:74)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "UA":
+			var reg = /^(?:|00380)(?:|0)(?:68|9|67|66|63|50|39)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "UG":
+			var reg = /^(?:|00256)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "UY":
+			var reg = /^(?:|00598)(?:|0)(?:99|97|98|94|95|96)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "UZ":
+			var reg = /^(?:|00998)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "VA":
+			var reg = /^(?:|0039)(?:|0)(?:373|362|363|366|368|370|340|377|380|388|389|390|391|392|393|397|310|31100|31101|31105|313|319|320|322|323|327|328|329|330|331|333|334|335|336|337|338|339|341|343|345|346|347|348|349|350|360|361)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "VE":
+			var reg = /^(?:|0058)(?:|0)(?:4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "VN":
+			var reg = /^(?:|0084)(?:|0)(?:12|16|9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "VU":
+			var reg = /^(?:|00678)(?:|0)(?:5|4)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "WS":
+			var reg = /^(?:|00685)(?:|0)(?:77)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "YE":
+			var reg = /^(?:|00967)(?:|0)(?:7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ZA":
+			var reg = /^(?:|0027)(?:|0)(?:8|7)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ZM":
+			var reg = /^(?:|00260)(?:|0)(?:9)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+		case "ZW":
+			var reg = /^(?:|00263)(?:|0)(?:91|11|23)(?:|[0-9])+$/;	
+			var rs = checkRegExg(v_land, reg, content);	
+			if (rs*1 != 1*1) 
+			{
+				JOptionPane.showMessageDialog(null,"Land " + v_land + " - The number isn't mobile!");
+				return false;	
+			}
+			break;		
+
+
+		default:
+			return trimSpace(content);
+	}
+	//-------------------------------------------------------
+	return trimSpace(content);
+}
+
+function checkRegExg(str_land, reg, content) 
+{
+	if (!content.match(reg) && content != "") {
+		return "0";
+	}
+	return "1";
+}
+
+function trimSpace(str)
+{
+    return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g,"");
+}
+
+
+importPackage(javax.swing);
+function email_checkvalid(E_Mail_Adresse, Land_Lookup){
+
+	var content = E_Mail_Adresse.toLowerCase();
+	var regex = /[А-Я]/gi;
+
+	if (regex.test(content) && (Land_Lookup == "LT" || Land_Lookup == "LV")){
+		JOptionPane.showMessageDialog(null,"Email - Khong duoc nhap ky tu tieng nga doi voi nuoc LT hoac LV!");
+		return false;	
+	}
+
+	return remove_space(content);
+
+}
+
+function remove_space(str) 
+{
+    return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g,"");
+}
+
+function checkValid(E_Mail_Adresse, E_Mail_Adresse_Valid) {
+
+	var value = E_Mail_Adresse;
+	var regex1 = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-\366\344\374]+\.([a-zA-Z0-9-]{2,4})$/
+	var regex2 = /^(([a-z0-9]+_+)|([a-z0-9]+\-+)|([a-z0-9]+\.+)|([a-z0-9]+\++))*[a-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-z]{2,6}$/
+	if(value == "") return "False";
+	if(value.toLowerCase().indexOf("www.",0)!=-1){
+		return "False";
+	}
+	if ((regex1.test(value)==true) || (regex2.test(value)==true))	{
+		return "True";
+	}
+	else {
+		return "False";
+	}
+
+}
