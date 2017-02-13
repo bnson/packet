@@ -3748,3 +3748,35 @@ function checkValid(E_Mail_Adresse, E_Mail_Adresse_Valid) {
 	}
 
 }
+
+function fill(Vorname, Nachname, VName){
+	var hidden_vn = Vorname.toLowerCase();
+	var value = hidden_vn;
+	var myArr = [/á/g,/à/g,/â/g,/ă/g,/ã/g,/ấ/g,/ầ/g,/ắ/g,/ằ/g,/ẫ/g,/ẵ/g,/ả/g,/ẩ/g,/ẳ/g,/ạ/g,/ậ/g,/ặ/g,/ä/g,/ā/g,/å/g,/ą/g,/ć/g,/č/g,/ç/g,/đ/g,/ď/g,/é/g,/è/g,/ẻ/g,/ẽ/g,/ẹ/g,/ê/g,/ế/g,/ề/g,/ể/g,/ễ/g,/ệ/g,/ë/g,/ē/g,/ę/g,/ğ/g,/ģ/g,/í/g,/ì/g,/ĩ/g,/ỉ/g,/ị/g,/ı/g,/î/g,/ï/g,/ī/g,/ķ/g,/ĺ/g,/ľ/g,/ļ/g,/ł/g,/ń/g,/ň/g,/ñ/g,/ņ/g,/ó/g,/ò/g,/ô/g,/õ/g,/ố/g,/ồ/g,/ỗ/g,/ỏ/g,/ơ/g,/ổ/g,/ọ/g,/ớ/g,/ờ/g,/ỡ/g,/ộ/g,/ở/g,/ợ/g,/ö/g,/ō/g,/ő/g,/ø/g,/r/g,/ŕ/g,/ř/g,/ŗ/g,/s/g,/ś/g,/š/g,/ş/g,/ť/g,/ţ/g,/ú/g,/ù/g,/ũ/g,/ủ/g,/ư/g,/ụ/g,/ứ/g,/ừ/g,/ữ/g,/ử/g,/ự/g,/û/g,/ü/g,/ū/g,/ů/g,/ű/g,/ý/g,/ỳ/g,/ỹ/g,/ỷ/g,/ỵ/g,/ÿ/g,/ź/g,/ż/g,/ž/g,/ß/g];
+	var myArr2 = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","ae","a","a","a","c","c","c","d","d","e","e","e","e","e","e","e","e","e","e","e","e","e","e","g","g","i","i","i","i","i","i","i","i","i","k","l","l","l","l","n","n","n","n","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","oe","o","o","o","r","r","r","r","s","s","s","s","t","t","u","u","u","u","u","u","u","u","u","u","u","u","ue","u","u","u","y","y","y","y","y","y","z","z","z","ss"];
+
+	for(i=0; i<myArr.length; i++){
+		value = value.replace(myArr[i], myArr2[i]);
+	}
+	return trimSpace(value);
+}
+
+function trimSpace(str) {
+    return str.replace(/\s/g,"");
+}
+
+function fill(Vorname, Nachname, NName){
+	var hidden_vn = Nachname.toLowerCase();
+	var value = hidden_vn;
+	var myArr = [/á/g,/à/g,/â/g,/ă/g,/ã/g,/ấ/g,/ầ/g,/ắ/g,/ằ/g,/ẫ/g,/ẵ/g,/ả/g,/ẩ/g,/ẳ/g,/ạ/g,/ậ/g,/ặ/g,/ä/g,/ā/g,/å/g,/ą/g,/ć/g,/č/g,/ç/g,/đ/g,/ď/g,/é/g,/è/g,/ẻ/g,/ẽ/g,/ẹ/g,/ê/g,/ế/g,/ề/g,/ể/g,/ễ/g,/ệ/g,/ë/g,/ē/g,/ę/g,/ğ/g,/ģ/g,/í/g,/ì/g,/ĩ/g,/ỉ/g,/ị/g,/ı/g,/î/g,/ï/g,/ī/g,/ķ/g,/ĺ/g,/ľ/g,/ļ/g,/ł/g,/ń/g,/ň/g,/ñ/g,/ņ/g,/ó/g,/ò/g,/ô/g,/õ/g,/ố/g,/ồ/g,/ỗ/g,/ỏ/g,/ơ/g,/ổ/g,/ọ/g,/ớ/g,/ờ/g,/ỡ/g,/ộ/g,/ở/g,/ợ/g,/ö/g,/ō/g,/ő/g,/ø/g,/r/g,/ŕ/g,/ř/g,/ŗ/g,/s/g,/ś/g,/š/g,/ş/g,/ť/g,/ţ/g,/ú/g,/ù/g,/ũ/g,/ủ/g,/ư/g,/ụ/g,/ứ/g,/ừ/g,/ữ/g,/ử/g,/ự/g,/û/g,/ü/g,/ū/g,/ů/g,/ű/g,/ý/g,/ỳ/g,/ỹ/g,/ỷ/g,/ỵ/g,/ÿ/g,/ź/g,/ż/g,/ž/g,/ß/g];
+	var myArr2 = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","ae","a","a","a","c","c","c","d","d","e","e","e","e","e","e","e","e","e","e","e","e","e","e","g","g","i","i","i","i","i","i","i","i","i","k","l","l","l","l","n","n","n","n","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","oe","o","o","o","r","r","r","r","s","s","s","s","t","t","u","u","u","u","u","u","u","u","u","u","u","u","ue","u","u","u","y","y","y","y","y","y","z","z","z","ss"];
+
+	for (i=0; i<myArr.length; i++){
+		value = value.replace(myArr[i], myArr2[i]);
+	}
+	return trimSpace(value);
+}
+
+function trimSpace(str) {
+    return str.replace(/\s/g,"");
+}
