@@ -51,6 +51,78 @@ public class utility_FileFolder {
             }
         }
     }
+    
+    public void replaceWordByPosition(String oldWord, String newWord, String linePosition, String indexPosition, String path) {
+
+        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(path));
+            String line;
+            String contentWrite = "";
+            
+            int intLine = 0;
+            while ((line = reader.readLine()) != null) {
+
+                if (intLine == Integer.parseInt(linePosition)) {
+                    String[] arrWords = line.split("\\s+");
+
+                    if (arrWords[Integer.parseInt(indexPosition)].equalsIgnoreCase(oldWord)) {
+                        arrWords[Integer.parseInt(indexPosition)] = newWord;
+                        System.out.println(arrWords[Integer.parseInt(indexPosition)] + " - " + oldWord);
+                    }
+
+                    line = "";
+                    for (String tmp : arrWords) {
+                        line = line + tmp + " ";
+                    }
+                    
+                }
+                
+                contentWrite += line + "\r\n";
+                intLine++;
+            }
+            reader.close();
+            
+            wirteFile(contentWrite, path);
+            
+        } catch (Exception e) {
+            System.err.format("Exception occurred trying to read '%s'.", path);
+            e.printStackTrace();
+
+        }        
+        
+    }
+    
+    public List<String> findPositionWord(String word, String path) {
+        List<String> records = new ArrayList();
+        try {
+            try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+                String line;
+                int intLine = 0;
+                while ((line = reader.readLine()) != null) {
+
+                    String[] words = line.split("\\s+");
+                    
+                    int intPost = 0;
+                    for (String tmp : words) {
+                        if (tmp.equalsIgnoreCase(word)) {
+                            String rs = tmp + ";" + intLine + ";" + intPost + ";" + path;
+                            System.out.println(tmp + ";" + intLine + ";" + intPost + ";" + path);
+                            records.add(rs);
+                        }
+                        intPost ++;                        
+                    }
+                    intLine++;
+                }
+            }
+            
+        } catch (IOException e) {
+            System.err.format("Exception occurred trying to read '%s'.", path);
+            return null;
+        }
+        
+        return records;
+    }    
 
     public String readFileToString(String filename) {
         String records ="";
@@ -117,6 +189,37 @@ public class utility_FileFolder {
         }
 
     }    
+    
+    
+    public void wirteFile(String dataStr, String path) {
+        BufferedWriter fbw = null;
+        OutputStreamWriter writer = null;
+        try {
+            String linkFile = path;
+            //System.out.println("wirteFile: " + linkFile);
+
+            writer = new OutputStreamWriter(new FileOutputStream(linkFile, false), "UTF-8");
+
+            fbw = new BufferedWriter(writer);
+            fbw.write(dataStr);
+            fbw.newLine();
+
+        } catch (IOException ex) {
+            Logger.getLogger(utility_FileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (fbw != null) {
+                    fbw.close();
+                }
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(utility_FileFolder.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
     
     public void wirteFile(String dataStr, String folderPath, String fileName) {
         BufferedWriter fbw = null;
