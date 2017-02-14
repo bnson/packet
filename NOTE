@@ -1,0 +1,2045 @@
+HTML5
+---------------------------------------------------
+<a href='http://www.vnlives.net/search/label/Programming?&amp;max-results=10'>Programming</a>
+<ul class='menuIndexItems'>
+<li><a href='http://www.vnlives.net/search/label/C?&amp;max-results=10'>C/C++</a></li>
+<li><a href='http://www.vnlives.net/search/label/C%23?&amp;max-results=10'>C-Sharp</a></li>
+<li><a href='http://www.vnlives.net/search/label/Java?&amp;max-results=10'>Java</a></li>
+<li><a href='http://www.vnlives.net/search/label/JavaScript?&amp;max-results=10'>JavaScript</a></li>
+<li><a href='http://www.vnlives.net/search/label/PHP?&amp;max-results=10'>PHP</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/Database?&amp;max-results=10'>Database</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/MS%20SQL?&amp;max-results=10'>MS SQL</a></li>
+<li><a href='http://www.vnlives.net/search/label/MySQL?&amp;max-results=10'>MySQL</a></li>
+<li><a href='http://www.vnlives.net/search/label/PostgreSQL?&amp;max-results=10'>PostgreSQL</a></li>
+<li><a href='http://www.vnlives.net/search/label/NoSQL?&amp;max-results=10'>No SQL</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/Design?&amp;max-results=10'>Design</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/Design%20Web?&amp;max-results=10'>Website</a></li>
+<li><a href='http://www.vnlives.net/search/label/Blogger?&amp;max-results=10'>Blogger</a></li>
+<li><a href='#'>Ghaphic</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/IT?&amp;max-results=10'>IT</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/Network?&amp;max-results=10'>Network</a></li>
+<li><a href='http://www.vnlives.net/search/label/Application?&amp;max-results=10'>System</a></li>
+<li><a href='http://www.vnlives.net/search/label/Hardware?&amp;max-results=10'>Hardware</a></li>
+<li><a href='http://www.vnlives.net/search/label/Software?&amp;max-results=10'>Software</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/Office?&amp;max-results=10'>Office</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/Word?&amp;max-results=10'>Word</a></li>
+<li><a href='http://www.vnlives.net/search/label/Excel?&amp;max-results=10'>Excel</a></li>
+<li><a href='http://www.vnlives.net/search/label/Power%20Point?&amp;max-results=10'>Power Point</a></li>
+<li><a href='http://www.vnlives.net/search/label/Other%20Office?&amp;max-results=10'>Other</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/Knowledge?&amp;max-results=10'>Knowledge</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/Science?&amp;max-results=10'>Science - Khoa Học</a></li>
+<li><a href='http://www.vnlives.net/search/label/Technology?&amp;max-results=10'>Technology - Kỹ Thuật </a></li>
+<li><a href='http://www.vnlives.net/search/label/Product?&amp;max-results=10'>Product - Sản Phẩm</a></li>
+<li><a href='http://www.vnlives.net/search/label/Health?&amp;max-results=10'>Health - Sức Khỏe</a></li>
+<li><a href='http://www.vnlives.net/search/label/What?&amp;max-results=10'>What? - Cái Gì?</a></li>
+</ul>
+
+<a href='http://www.vnlives.net/search/label/Relax?&amp;max-results=10'>Relax</a>
+<ul class='dropdown-menu'>
+<li><a href='http://www.vnlives.net/search/label/Music?&amp;max-results=10'>Music</a></li>
+<li><a href='http://www.vnlives.net/search/label/Movie?&amp;max-results=10'>Movie</a></li>
+<li><a href='http://www.vnlives.net/search/label/Image?&amp;max-results=10'>Image</a></li>
+<li><a href='http://www.vnlives.net/search/label/Audio?&amp;max-results=10'>Audio</a></li>
+<li><a href='http://www.vnlives.net/search/label/Story?&amp;max-results=10'>Story</a></li>
+<li><a href='http://www.vnlives.net/search/label/Travel?&amp;max-results=10'>Travel</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="description" content="Support Code CSS: Add Body Background Color.">
+		<meta name="author" content="bnson">
+
+		<title>Support Code CSS: Add Body Background Color.</title>
+
+		<script src="Link_Javascript_File" type="text/javascript"></script>
+
+		<link href="Link_CSS_File" type="text/css" rel="stylesheet" media="screen"/>
+
+		<!--[if lt IE 9]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<style>
+			body  {
+				background-image: url("paper.gif");
+				background-color: #cccccc;
+			}
+		</style>
+
+	</head>
+
+	<body>
+ 		<!-- Content -->
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+edit function "msd_rev.ws_pop_queue_invoice_info(integer)" 
+update [update_MSD_REV.data_set_Vendor_TaxNumberMissing = sVendor_VatIdentificationNumber_1 where id = iManegement_id]
+to [update_MSD_REV.data set Vendor_TaxNumberMissing = 'true' where id = iManegement_id]
+
+
+http://diepviends.blogspot.com/2013/07/tao-connection-pool-mysql-trong-java.html
+postgresql-2016-10-28_163117.log:2016-10-28 16:32:48 ICT ideas_production ideas_eon IDEAS_auto 29358 10.10.5.85(51410) 0 5DETAIL:  parameters: $1 = '', $2 = 'update EON.data set "barcode"=''          0                        75300000347960          INTERLEAVED2OF5          0                      315            393            411            78                                    999999999999          INTERLEAVED2OF5          0                      267            2797            475            207                                      1                    2            '',"imagepagination"=''75310226/20161028_4_753029_53_314'',"filecreationdatetime"=''2016-10-28T10:49:13.897'',"scanjob"=''753029'',"imageid"=''489fc2fe-6a25-49f8-8f41-5d15ee7ec291'',"imageid_step1"=''489fc2fe-6a25-49f8-8f41-5d15ee7ec291'',capture_date=current_date::character varying where management_id=1673372'
+postgresql-2016-10-28_163534.log:2016-10-28 16:36:12 ICT ideas_production ideas EON_OCR 17033 10.10.5.88(54133) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  DocumentType = ''Invoice'' WHERE id = 1673372;'
+postgresql-2016-10-28_163534.log:2016-10-28 16:36:12 ICT ideas_production ideas EON_OCR 17064 10.10.5.88(54162) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  companycode_ = ''0400'', companycode = ''0400'', rep_name1 = ''E.ON SE'', RecipientName1 = ''E.ON SE'', rep_name2 = '''', RecipientName2 = '''', rep_street = ''Postfach 100353'', RecipientStreet = ''Postfach 100353'', rep_zipcode = ''96055'', RecipientZipCode = ''96055'', rep_city = ''Bamberg'', RecipientCity = ''Bamberg'', scope = ''4'', scanjobemail = ''0'' WHERE id = 1673372;'
+postgresql-2016-10-28_163534.log:2016-10-28 16:36:17 ICT ideas_production ideas EON_OCR 17840 10.10.5.88(54798) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  country_ = ''DE'', Country = ''DE'', Supp_Number = ''0002157307'', SupplierNumber = ''0002157307'', Supp_Name1 = ''WTS Steuerberatungsgesellschaft mbH'', SupplierName1 = ''WTS Steuerberatungsgesellschaft mbH'', Supp_Name2 = '''', SupplierName2 = '''', Supp_Street = ''Peter-Müller-Str. 18'', SupplierStreet = ''Peter-Müller-Str. 18'', Supp_ZipCode1 = '''', SupplierZipCode1 = '''', Supp_ZipCode2 = ''40468'', SupplierZipCode2 = ''40468'', Supp_City1 = ''Düsseldorf'', SupplierCity1 = ''Düsseldorf'', Supp_City2 = ''Unterrath'', SupplierCity2 = ''Unterrath'', Supp_STCD1 = '''', SupplierSTCD1 = '''', Supp_STCD2 = '''', SupplierSTCD2 = '''', Supp_STCD3 = '''', SupplierSTCD3 = '''', Supp_STENR = '''', SupplierSTERN = '''', Supp_SCTEG = ''DE205370699'', SupplierSCTEG = ''DE205370699'', Supp_BankN = ''2460998'', SupplierBankN = ''2460998'', Supp_BankN1 = '''', SupplierBankN1 = '''', Supp_BankN2 = '''', SupplierBankN2 = '''', Supp_IBAN = ''DE18700202700002460998'', SupplierIBAN = ''DE18700202700002460998'', Supp_IBAN1 = '''', SupplierIBAN1 = '''', Supp_IBAN2 = '''', SupplierIBAN2 = '''', Supp_POBox = '''', SupplierPOBox = '''', Supp_BankL2 = '''', SupplierBankL2 = '''', Supp_BankL1 = '''', SupplierBankL1 = '''', Supp_BankL = ''70020270'', SupplierBankL = ''70020270'', Supp_SWIFT = ''HYVEDEMMXXX'', SupplierSWIFT = ''HYVEDEMMXXX'', Supp_SWIFT1 = '''', SupplierSWIFT1 = '''', Supp_SWIFT2 = '''', SupplierSWIFT2 = '''' WHERE id = 1673372;'
+postgresql-2016-10-28_163936.log:2016-10-28 16:39:55 ICT ideas_production ideas EON_OCR 6499 10.10.5.88(40818) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  InvoiceNumber = ''30.09.2016-1061518'', InvoiceDate = ''30092016'', TotalAmount = ''60708,92'', Currency = ''EUR'', VatIDNrSupplier = ''DE275992891'', DeliveryDate = ''01052031'', PurchaseOrderNumber = ''4500085916'', IBAN = ''DE68700202700010284118'', NetAmount = ''51015,90'', VatAmount = ''9693,02'', VatRate = ''19,00'' WHERE id = 1673372;'
+postgresql-2016-10-28_163936.log:2016-10-28 16:39:55 ICT ideas_production ideas EON_OCR 6503 10.10.5.88(40821) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  InvoiceNumber = ''30.09.2016-1061518'', InvoiceDate = ''30092016'', TotalAmount = ''60708,92'', Currency = ''EUR'', VatIDNrSupplier = ''DE275992891'', DeliveryDate = ''01052031'', PurchaseOrderNumber = ''4500085916'', IBAN = ''DE68700202700010284118'' WHERE id = 1673372;'
+postgresql-2016-10-28_163936.log:2016-10-28 16:39:55 ICT ideas_production ideas EON_OCR 6505 10.10.5.88(40823) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET  VatIDNrSupplier = ''DE275992891'', TaxNrSupplier = '''', AccountNumber = ''`'', BankCode = ''`'', IBAN = ''DE68700202700010284118`'', SWIFT = ''HYVIDEMMXXX`'', tempblzandacc = ''`'', NetAmount = ''51015,90'', VatAmount = ''9693,02'', VatRate = ''19,00'', TotalAmount = ''60708,92'' WHERE id = 1673372;'
+postgresql-2016-10-28_163936.log:2016-10-28 16:39:55 ICT ideas_production ideas EON_OCR 6507 10.10.5.88(40824) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.data SET invoicenumber=''30.09.2016-1061518'' WHERE id = 1673372;'
+---------------------------------------------------------------------------------
+postgresql-2016-10-28_163117.log:2016-10-28 16:32:48 ICT ideas_production ideas_eon IDEAS_auto 29358 10.10.5.85(51410) 0 5DETAIL:  parameters: $1 = '', $2 = 'update EON.data set "barcode"=''          0                        75300000347960          INTERLEAVED2OF5          0                      315            393            411            78                                    999999999999          INTERLEAVED2OF5          0                      267            2797            475            207                                      1                    2            '',"imagepagination"=''75310226/20161028_4_753029_53_314'',"filecreationdatetime"=''2016-10-28T10:49:13.897'',"scanjob"=''753029'',"imageid"=''489fc2fe-6a25-49f8-8f41-5d15ee7ec291'',"imageid_step1"=''489fc2fe-6a25-49f8-8f41-5d15ee7ec291'',capture_date=current_date::character varying where management_id=1673372'
+postgresql-2016-10-28_163534.log:2016-10-28 16:36:11 ICT ideas_production ideas EON_OCR 16923 10.10.5.88(54049) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.management SET ocr_1_status=1 WHERE id = 1673372'
+postgresql-2016-10-28_163534.log:2016-10-28 16:36:18 ICT ideas_production ideas EON_OCR 17843 10.10.5.88(54801) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.management SET pre_process_ocr_1_status=1 WHERE id = 1673372'
+postgresql-2016-10-28_163936.log:2016-10-28 16:39:55 ICT ideas_production ideas EON_OCR 6517 10.10.5.88(40833) 0 5DETAIL:  parameters: $1 = '', $2 = 'UPDATE EON.management SET pre_process_ocr_2_status=1 WHERE id = 1673372'
+
+
+
+
+
+
+
+
+1. Sonstige Belege / Miscellaneous
+2. Leistungsbeleg weitere / VoucherOthers
+3. Leistungsbelege / Voucher
+4. Gutschriften / CreditMemo
+5. Header / Header
+6. Rechnung / Invoice
+7. Schichtprotokoll / ShiftProtocol
+8. Schichtprotokoll weitere Seite / ShiftProtocolFurtherPage
+9. Protokoll Agenturvertrieb / AgencySalesProtocol
+A. Geschäftsvorfall / BusinessTransaction
+B. Dienstantrittsgutschein / CommencementOfDutiesGift
+C. Vorgang mit ungültiger Seite / InvalidFrame
+D. BVS Protokoll / BvsProtocol
+E. Leere Seite / EmptyFrame
+F. Suchformular Restfehlersuche / DocumentSearchForm
+G. Fahrgastrechtformular / PassengerRightsClaimForm
+
+
+
+How to get current Millisecond in Java?
+programer, programer: java, 
+To get current Millisecond in Java Java using:
+<pre>
+Calendar now = Calendar.getInstance();
+now.get(Calendar.MILLISECOND)
+</pre>
+
+<h3><u>Example get current Millisecond:</u></h3>
+<pre>
+package zexample;
+
+import java.util.Calendar;
+
+/**
+ *
+ * @author bnson
+ */
+public class javagetcurrentMillisecond {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Calendar now = Calendar.getInstance();
+        System.out.println("Current Second is : " + now.get(Calendar.MILLISECOND));
+    }
+    
+}
+</pre>
+
+<h3><u>Output:</u></h3>
+<pre>
+run:
+Current Second is : 246
+BUILD SUCCESSFUL (total time: 0 seconds)
+</pre>
+
+-------------------------------------------------
+ideas_auto_services.jar
+
+
+
+**/Implementation/Intergrated_Tool/**,**/build/**,**/Implementation/Sourcecode/icon/**,**/Implementation/Sourcecode/**
+
+How to build:
+1. Main:
+Include: **/UINavigator.java,**/UCButton.java,**/application/Main.java,**/Licence.java,**/CLMultiLineToolTip.java,**/UISelectZipVerificationBad.java,**/UISelectZipVerificationOMR.java,**/UCMultiLineToolTip.java,**/Configuration.java,**/Pages.java,**/Sections.java,**/Field_Name.java,**/Project.java,**/User.java,**/entities/Form.java,**/lookup_input.java,**/BLLNavigator.java,**/DALProject.java,**/DBase.java,**/DBaseNew.java,**/DBConnectionManager.java,**/DBConnectionManagerNew.java,**/DBConnectionPool.java,**/BaseBLL.java,**/EnumFunctions.java,**/Field_Constains.java,**/Group_Field.java,**/UILogin.java,**/DALRole.java,**/DALSession.java,**/Role.java,**/BLLLogin.java,**/BLLUserManagement.java,**/BLLUserAssignment.java,**/entities/Session.java,**/DALLogin.java,**/UISelectFormSection.java,**/UISelectFormForQC.java,**/UISelectFormForApprove.java,**/BLLSelectFormForApprove.java,**/BLLSelectFormForQC.java,**/BLLSelectFormSection.java,**/UISetLanguage.java,**/UIAbout.java,**/DALSelectFormForApprove.java,**/DALSelectFormForQC.java,**/UIChangePassword.java,**/DALSelectFormSection.java,**/BLLChangePassword.java,**/Region.java,**/DALForm.java,**/DALSection.java,**/DALUser.java,**/DALUserAssignment.java,**/CheckNode.java,**/UISelectZipVerification.java,**/DALChangePassword.java,**/AdvanceApp.java,**/BLLRolesManagement.java,**/DALRole.java,**/advance_tooltip.java,**/UIDatabaseConfiguration.java,**/BLLDatabaseConfiguration.java,**/BLLOMRVerifier.java,**/DALOMRVerification.java,**/BLLKeyGPGProject_old.java,**/DALKeyGPGProject_old.java,**/BLLVerifyBadImage.java,**/DALVerifyBadImage.java,**/BLLKeyGPGProject.java,**/DALKeyGPGProject.java,**/BLLAnchor.java,**/DALAnchor.java,**/CommonLoginConfig.java,**/EnumSteps.java,**/DALDatabaseConfiguration.java,**/entities/Management.java,**/Reason.java,**/OMR.java,**/Anchor.java,**/CLRecognize.java,**/CLTiffImageProcessing.java,**/utilities/,icons/, **/BLLFormDataCapture.java,**/ParameterProject.java,**/DALFormDataCapture.java,**/BLLSearchChar.java,**/Standard_address_config.java,**/Char_symbol_ideas.java,**/DALSearchChar.java,**/ComboBoxItems.java,**/checkcombo/,**/UCProcessing.java,**/usershape/,**/UCTable.java,**/BLLNavigatorShortcut.java,**/NavigatorShortcut.java,**/DALNavigatorShortcut.java,**/UCFontChooser.java,**/Step2SettingDownload.java,**/UILicenseManagement.java,**/UIPointCalculator.java,**/UIUpdateLicense.java,**/UIMailConfiguration.java,**/UCEstimationTable.java,**/UCShadowTextButton.java,**/PreFilled.java,**/ComboBoxItemForm.java,**/QCCheckingComboBoxItem.java,**/QCListZipForm.java,**/DBConnectionPoolNew.java,**/EntPreTemplate.java,**/BLLLDAPAuthentication.java,**/BLLLDAPAuthenticationLib.java,**/ENTMaskField.java,**/ENTClassifyType.java
+Exclude: **/Implementation/Intergrated_Tool/**,**/utilities/OCRSpider/,**/CaptureRejectCharacter.java
+private static boolean license=false;
+##Exclude: **/Implementation/Intergrated_Tool/**
+1. modfunction
+include: **/Sourcecode/,icons/,templates/,com/,connectorservice/,org/
+exclude: **/Implementation/Intergrated_Tool/**
+private static boolean modFunctionBuild=true;
+private static boolean license=true;
+Main Class: Implementation.Sourcecode.application.MainFunctions
+2. auto: 
+include: **/Sourcecode/,icons/,templates/,com/,connectorservice/,org/
+exclude: **/Implementation/Intergrated_Tool/**,**/utilities/OCRSpider/
+Main: Implementation.Sourcecode.application.MainAutomaticServer
+
+private static boolean modFunctionBuild=false;
+
+3. Resource:
+**/properties/IDEASResources.properties
+**/properties/IDEASResources_fr.properties
+
+
+
+
+
+
+
+
+
+
+
+
+http://ateraimemo.com/Swing/ResizableComponents.html
+http://zetcode.com/tutorials/javaswingtutorial/resizablecomponent/
+http://zetcode.com/tutorials/javaswingtutorial/puzzle/
+http://android.vn/threads/bai-15-phuong-thuc-setter-va-getter-trong-java.26615/
+http://ielsrancorp.blogspot.com/2009/10/dialogs-for-everyday-use-unit-one.html
+http://streamlinea.blogspot.com/2012/04/unit-01-hello.html
+http://android.vn/threads/bai-15-phuong-thuc-setter-va-getter-trong-java.26615/
+http://share-zoom.blogspot.com/2014/04/phuong-thuc-getter-va-setter-trong-java.html
+http://www.tech-g.com/2014/01/29/disable-windows-has-detected-a-hard-disk-problem-in-windows/
+-----------------------------------
+http://java4projects.blogspot.com/2012/05/how-to-use-jtabbedpane-in-netbeans.html
+http://stackoverflow.com/questions/21750314/how-to-add-tabs-to-jtabbedpane-using-windowbuilder
+http://tutorialforlinux.com/2016/09/10/troubleshooting-php-fpm-and-nginx-502-bad-gateway-issue-on-ubuntu-debian-mint/
+http://www.rainbowbreeze.it/java-image-conversion-to-byte-array/
+http://stackoverflow.com/questions/20826216/copy-two-buffered-image-into-one-image-side-by-side
+http://kalanir.blogspot.com/2010/02/how-to-merge-multiple-images-into-one.html
+programer, programer: java, 
+http://www.tienganhlachuyennho.com/cach-su-dung-need
+http://www.megaleecher.net/node/1154#axzz4JRVQYpEl
+http://www.tienganhlachuyennho.com/cach-su-dung-need
+http://java-demos.blogspot.com/2013/09/creating-transparent-jpanel-in-swing.html
+http://java.worldbestlearningcenter.com/2013/07/java-programs-download.html
+http://corejavacorner.blogspot.com/2013/07/simple-java-program-to-zoom-in-and-zoom.html
+https://www.oxhow.com/hide-personal-files-folders-linux/
+http://coderazzi.net/tablefilter/download.html
+https://www.sitepoint.com/a-basic-html5-template/
+http://netjs.blogspot.com/2015/04/encapsulation-in-java.html
+http://csharpdotnetfreak.blogspot.com
+http://www.computerhives.com/java/java-program-to-check-leap-year/
+http://sampleprogramz.com/java/leap.php
+http://www.careerbless.com/samplecodes/java/beginners/basicprograms/BasicArithmeticDemo.php
+http://rusya7.blogspot.com/2011/10/how-to-use-slf4j-with-log4j.html
+http://backlogtool.com/git-guide/vn/stepup/stepup1_5.html
+http://1bestcsharp.blogspot.com/
+http://www.java2novice.com/jdbc/create-connection/
+http://www.sqlsnippets.com/en/topic-11744.html
+http://jroller.com/page/gursesl/cleanfulltext/remote_application_debugging_with_weblogic
+https://dzone.com/articles/how-setup-remote-debug
+http://saltnlight5.blogspot.com/2014/04/how-to-setup-remote-debug-with-weblogic.html
+http://javacolors.blogspot.com/2006/08/debugging-application-servers.html
+http://www.oracle.com/technetwork/developer-tools/jdev/remotedebugwls-086628.html
+http://saltnlight5.blogspot.com/2014/04/how-to-setup-remote-debug-with-weblogic.html
+http://iviettech.vn/blog/1783-scrum-best-practice-thuc-hanh-ap-dung-scrum.html
+http://www.sanfoundry.com/c-program-odd-even-number-array/
+http://dia-installer.de/doc/en/objects-chapter.html
+http://www.quickprogrammingtips.com/category/java/page/14
+https://docs.oracle.com/javase/tutorial/java/concepts/index.html
+http://dangkhoahome.blogspot.com/2012/05/danh-sach-lien-ket-linked-list.html
+http://tapchilaptrinh.vn/tag/linkedlist/
+http://www.quickprogrammingtips.com/
+https://sites.google.com/site/ndhcuong/courses/co-so-du-lieu-nang-cao/thuc-hanh-mysql/chuong-5-trigger
+http://briansjavablog.blogspot.com/2016/07/docker-spring-boot.html
+http://minborgsjavapot.blogspot.com/2014/10/new-java-8-object-support-mixin-pattern.html
+http://java-demos.blogspot.in/2012/09/setting-background-image-in-jframe.html
+http://rickyclarkson.blogspot.com/
+http://stackoverflow.com/questions/8586137/java-delay-wait
+http://stackoverflow.com/questions/4123044/maven-3-warnings-about-build-plugins-plugin-version
+http://www.javacoffeebreak.com/faq/
+https://www.postgresql.org/list/pgsql-bugs/
+http://kim.sg/index.php/ubuntu
+http://alvinalexander.com/unix/edu/examples/mkdir.shtml
+https://help.ubuntu.com/lts/ubuntu-help/sound-nosound.html
+https://support.microsoft.com/en-us/kb/323246
+http://java-buddy.blogspot.com
+http://hungphamit.blogspot.com/2013/03/10-ieu-can-biet-danh-cho-lap-trinh-vien.html
+http://tryingshare123.blogspot.com/2014/09/javafx-8-phan-1-gioi-thieu-javafx.html
+http://www.toihocjava.com/2007/05/xin-cho-javafx.html
+http://sinhvienit.net/forum/de-tai-tim-hieu-javafx-bao-cao-code-demo.88665.html
+http://www.leepoint.net/index.html
+http://www.mathwarehouse.com/geometry/circle/area-of-circle.php
+http://codercareer.blogspot.com/2011/09/interview-question-no-1-binary-search.html
+How to print E in java?
+https://dcrazed.com/css-html-login-form-templates/
+----------------------------------------------------
+http://www.avajava.com/tutorials/lessons/how-do-i-specify-a-main-class-in-the-manifest-of-my-generated-jar-file.html
+http://tipsonubuntu.com/
+http://askubuntu.com/questions/65281/how-to-recover-reset-forgotten-gnome-keyring-password
+http://stackoverflow.com/questions/10055005/how-to-draw-an-image-over-another-image/10055021#10055021
+http://stackoverflow.com/questions/13409279/drawing-graphics-is-too-slow
+http://www.itnotes.eu/?p=2040
+http://stackoverflow.com/questions/24917832/how-connect-postgres-to-localhost-server-using-pgadmin-on-ubuntu
+http://www.binarytides.com/better-linux-mint-17-cinnamon/
+http://stackoverflow.com/questions/19318704/java-duplicate-class
+http://jd.benow.ca/
+linux mint remmina remote desktop
+http://askubuntu.com/questions/567039/how-to-upgrade-to-a-later-version-of-remmina-than-is-in-repository
+https://github.com/FreeRDP/Remmina/issues/439
+http://stackoverflow.com/questions/8055371/how-to-run-two-commands-in-one-line-in-windows-cmd
+http://techie-experience.blogspot.com/2012/10/encryption-and-decryption-using-aes.html
+http://blog.sqlauthority.com/2009/06/17/sql-server-list-schema-name-and-table-name-for-database/
+http://database-programmer.blogspot.com/2007/11/database-skills-introdution.html
+https://dzone.com/articles/get-md5-hash-few-lines-java
+http://www.avajava.com/tutorials/categories/general-java
+http://www.avajava.com/tutorials/categories/general-java
+http://plusthuthuat.blogspot.com/2016/01/hai-tet-2016-ken-re-ngu-hai-tet-2016.html
+http://www.santhoshreddymandadi.com/java/java-virtual-machine-jvm-architecture.html
+https://sites.google.com/site/nguoisaigonblog/giai-thuat-sap-xep-tinh-te/giai-thuat-radix-sort-dan-tri
+http://applware.blogspot.com/2011/02/set-up-remote-desktop-web-connection.html
+http://www.get-digital-help.com/2011/07/12/count-unique-distinct-values-that-meet-multiple-criteria-in-excel/
+=SUM(IF($A$2:$A$14=E1,1/(COUNTIFS($A$2:A$14,E1,$B$2:$B$14,$B$2:$B$14)),0))
+http://www.sourcecodester.com/node/10563
+http://www.lionblogger.com/java-application-mysql-database/
+http://www.codejava.net/coding/how-to-calculate-md5-and-sha-hash-values-in-java
+http://marxsoftware.blogspot.com/2012/04/specifying-appropriate-netbeans-jdk.html
+https://dzone.com/articles/arraylist-vs-linkedlist-vs
+http://www.programcreek.com/2013/03/arraylist-vs-linkedlist-vs-vector/
+http://www.ibm.com/developerworks/data/library/techarticle/dm-1209storedprocedures/
+http://www.xyzws.com/javafaq/how-to-call-a-stored-procedure-by-jdbc-java-class/169
+http://practicalsw.blogspot.com/2012/03/example-of-java-swing-desktop.html
+http://twigstechtips.blogspot.com/search?updated-max=2016-03-11T15:45:00%2B11:00&max-results=2
+https://docs.oracle.com/cd/B13789_01/appdev.101/b10807/10_objs.htm#BEGIN
+http://stackoverflow.com/questions/276927/can-i-concatenate-multiple-mysql-rows-into-one-field
+http://stackoverflow.com/questions/18102283/how-to-concat-many-rows-into-one-string-in-sql-server-2008
+http://beebom.com/linux-music-player-apps/
+http://www.rgagnon.com/javadetails/java-0253.html
+http://sqlvn.blogspot.com/2013/12/the-many-uses-of-coalesce-in-sql-server.html
+https://blogs.oracle.com/aramamoo/entry/how_to_split_comma_separated_string_and_pass_to_in_clause_of_select_statement
+http://www.java-samples.com/showtutorial.php?tutorialid=814
+https://www.javacodegeeks.com/2010/08/java-best-practices-vector-arraylist.html
+http://javahungry.blogspot.com/2014/03/hashmap-vs-hashtable-difference-with-example-java-interview-questions.html
+http://stackoverflow.com/questions/8172420/how-to-convert-a-char-to-a-string-in-java
+------------------------------------
+http://www.code-it.com/membership/exclusive_software2.htm
+
+
+            File f = new File(UIBBRaun.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+            currentPath = f.getPath();
+            if (currentPath.lastIndexOf(".jar") != -1) {
+                if (currentPath.contains("/")) {
+                    currentPath = this.currentPath.substring(0, currentPath.lastIndexOf("/") + 1);
+                }
+                if (currentPath.contains("\\")) {
+                    currentPath = this.currentPath.substring(0, currentPath.lastIndexOf("\\") + 1);
+                }
+            }
+            System.out.println("-- OS System: " + System.getProperty("os.name"));
+            System.out.println("-- OS Separator: " + System.getProperty("file.separator"));
+            if ((this.currentPath.lastIndexOf("\\") == -1) && (currentPath.lastIndexOf("/") == -1)) {
+                this.currentPath += System.getProperty("file.separator");
+            }
+            System.out.println("-- currentPath: " + currentPath);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + ex);
+        }
+
+2016-07-05 12:10:16,415 [Thread-1] INFO  Implementation.Sourcecode.GUI.UIBBRaun - Data processing...
+2016-07-05 12:10:16,417 [Thread-1] INFO  Implementation.Sourcecode.GUI.UIBBRaun - writing file: /Public_dev/bnson/test/error/bbraun/import/live/2016-07-05/BBraun_companycodes_VN.csv
+2016-07-05 12:10:16,430 [Thread-1] INFO  Implementation.Sourcecode.GUI.UIBBRaun - finished wite file: /Public_dev/bnson/test/error/bbraun/import/live/2016-07-05/BBraun_companycodes_VN.csv
+2016-07-05 12:10:16,430 [Thread-1] INFO  Implementation.Sourcecode.GUI.UIBBRaun - Import : By execute this command: cd /home/bnson/Folder/source_code/git/BBraun_Reference_Importer/build/classesImport_lookup/ ; java -jar ImportLookup.jar /Public_dev/bnson/test/error/bbraun/import/live/2016-07-05/BBraun_companycodes_VN.csv address address bbraun_companycodes_vn HCM Postgres truncate ";" bbraun_supplier_bank_load
+[bash, -c, cd /home/bnson/Folder/source_code/git/BBraun_Reference_Importer/build/classesImport_lookup/ ; java -jar ImportLookup.jar /Public_dev/bnson/test/error/bbraun/import/live/2016-07-05/BBraun_companycodes_VN.csv address address bbraun_companycodes_vn HCM Postgres truncate ";" bbraun_supplier_bank_load]
+2016-07-05 12:10:16,434 [Thread-1] INFO  Implementation.Sourcecode.GUI.UIBBRaun - Import: BBraun_companycodes_VN.dat failed
+2016-07-05 12:10:16,434 [Thread-1] ERROR Implementation.Sourcecode.GUI.UIBBRaun - rollback(projectRun) error!
+
+cinnamon is currently running without video hardware acceleration and, as a result, you may observe much higher than normal CPU usage.
+
+There could be a problem with your drivers or some other issue. For the bes experience, it is recommended that you only use this mode for troubleshooting purposes.
+
+
+bnson@201512COM0506 ~ $ glxinfo | grep direct
+libGL error: failed to open drm device: Permission denied
+libGL error: failed to load driver: i965
+direct rendering: Yes
+    GL_ARB_draw_elements_base_vertex, GL_ARB_draw_indirect, 
+    GL_ARB_multi_draw_indirect, GL_ARB_occlusion_query2, 
+
+
+
+https://forums.linuxmint.com/viewtopic.php?t=182453
+
+
+
+
+
+-- Table: address
+
+-- DROP TABLE address;
+
+CREATE TABLE address
+(
+  anrede character varying,
+  vorname text,
+  nachname text,
+  company_name text,
+  strasse character varying,
+  hausenummer character varying,
+  strasse_haus character varying(255),
+  gleiort character varying,
+  land character varying,
+  plz character varying,
+  ort character varying(255),
+  note character varying,
+  vorwahlen character varying,
+  telefon character varying,
+  vornwahl_and_telefon character varying,
+  fax character varying,
+  sub_ort character varying(50),
+  titel character varying,
+  plz_old character varying,
+  ort_old character varying,
+  strasse_old character varying,
+  anrede_new character varying,
+  vorname_old character varying(255),
+  name_old character varying(255),
+  zusatz character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE address
+  OWNER TO address;
+GRANT ALL ON TABLE address TO address;
+GRANT ALL ON TABLE address TO vnthang;
+GRANT SELECT ON TABLE address TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE address TO dml_pri;
+GRANT SELECT ON TABLE address TO app_masterdata;
+
+-- Index: address_finish_idx1
+
+-- DROP INDEX address_finish_idx1;
+
+CREATE INDEX address_finish_idx1
+  ON address
+  USING btree
+  (lower(vorname) text_pattern_ops, lower(strasse::text) text_pattern_ops, plz text_pattern_ops, lower(ort::text) text_pattern_ops);
+
+-- Index: address_finish_idx10
+
+-- DROP INDEX address_finish_idx10;
+
+CREATE INDEX address_finish_idx10
+  ON address
+  USING btree
+  (lower(nachname) text_pattern_ops, lower(strasse::text) text_pattern_ops, plz text_pattern_ops, lower(hausenummer::text) text_pattern_ops);
+
+-- Index: address_finish_idx12
+
+-- DROP INDEX address_finish_idx12;
+
+CREATE INDEX address_finish_idx12
+  ON address
+  USING btree
+  (lower(strasse::text) text_pattern_ops, plz text_pattern_ops, lower(ort::text) text_pattern_ops);
+
+-- Index: address_finish_idx15
+
+-- DROP INDEX address_finish_idx15;
+
+CREATE INDEX address_finish_idx15
+  ON address
+  USING btree
+  (lower(nachname) text_pattern_ops, lower(strasse::text) text_pattern_ops, plz text_pattern_ops, lower(ort::text) text_pattern_ops);
+
+-- Index: address_finish_idx16
+
+-- DROP INDEX address_finish_idx16;
+
+CREATE INDEX address_finish_idx16
+  ON address
+  USING btree
+  (lower(nachname) text_pattern_ops, plz text_pattern_ops, lower(ort::text) text_pattern_ops, lower(hausenummer::text) text_pattern_ops);
+
+-- Index: address_finish_idx17
+
+-- DROP INDEX address_finish_idx17;
+
+CREATE INDEX address_finish_idx17
+  ON address
+  USING btree
+  (lower(vorname) text_pattern_ops, lower(strasse::text) text_pattern_ops, plz text_pattern_ops, lower(ort::text) text_pattern_ops, lower(hausenummer::text) text_pattern_ops);
+
+-- Index: address_finish_idx2
+
+-- DROP INDEX address_finish_idx2;
+
+CREATE INDEX address_finish_idx2
+  ON address
+  USING btree
+  (lower(vorwahlen::text) text_pattern_ops, lower(telefon::text) text_pattern_ops);
+
+-- Index: address_finish_idx3
+
+-- DROP INDEX address_finish_idx3;
+
+CREATE INDEX address_finish_idx3
+  ON address
+  USING btree
+  (lower(vorwahlen::text) varchar_pattern_ops);
+
+-- Index: address_finish_idx3_1
+
+-- DROP INDEX address_finish_idx3_1;
+
+CREATE INDEX address_finish_idx3_1
+  ON address
+  USING btree
+  (lower(vorwahlen::text) text_pattern_ops);
+
+-- Index: address_finish_idx4
+
+-- DROP INDEX address_finish_idx4;
+
+CREATE INDEX address_finish_idx4
+  ON address
+  USING btree
+  (lower(telefon::text) varchar_pattern_ops);
+
+-- Index: address_finish_idx5
+
+-- DROP INDEX address_finish_idx5;
+
+CREATE INDEX address_finish_idx5
+  ON address
+  USING btree
+  (lower(vorwahlen::text) text_pattern_ops, (telefon::text) text_pattern_ops);
+
+-- Index: address_finish_idx6
+
+-- DROP INDEX address_finish_idx6;
+
+CREATE INDEX address_finish_idx6
+  ON address
+  USING btree
+  ((telefon::text) varchar_pattern_ops);
+
+-- Index: address_finish_idx7
+
+-- DROP INDEX address_finish_idx7;
+
+CREATE INDEX address_finish_idx7
+  ON address
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: address_finish_idx8
+
+-- DROP INDEX address_finish_idx8;
+
+CREATE INDEX address_finish_idx8
+  ON address
+  USING btree
+  ((vornwahl_and_telefon::text) varchar_pattern_ops);
+
+-- Index: address_finish_idx9
+
+-- DROP INDEX address_finish_idx9;
+
+CREATE INDEX address_finish_idx9
+  ON address
+  USING btree
+  (lower(vorwahlen::text) text_pattern_ops, telefon text_pattern_ops);
+
+-- Index: test1
+
+-- DROP INDEX test1;
+
+CREATE INDEX test1
+  ON address
+  USING gin
+  (telefon gin_trgm_ops);
+
+========================================================================================
+
+-- Table: address_au
+
+-- DROP TABLE address_au;
+
+CREATE TABLE address_au
+(
+  anrede character varying(4),
+  vorname character varying(100),
+  nachname character varying(150),
+  strasse character varying(100),
+  hausenummer character varying(50),
+  plz character varying(20),
+  main_and_sub_ort character varying(100),
+  telefonnummer character varying(30),
+  vornwahl_and_telefon character varying(20),
+  vorwahlen character varying(10),
+  telefon character varying(20),
+  ort character varying(50),
+  sub_ort character varying(50),
+  new_title character varying(255),
+  new_company character varying(255)
+)
+WITH (
+  OIDS=TRUE
+);
+ALTER TABLE address_au
+  OWNER TO address;
+GRANT ALL ON TABLE address_au TO address;
+GRANT ALL ON TABLE address_au TO vnthang;
+GRANT SELECT ON TABLE address_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE address_au TO dml_pri;
+GRANT SELECT ON TABLE address_au TO app_masterdata;
+COMMENT ON TABLE address_au
+  IS 'Dia chi nuoc Ao,Updated 2010-09-20';
+
+-- Index: address_au_vornwahl_and_telefon_idx
+
+-- DROP INDEX address_au_vornwahl_and_telefon_idx;
+
+CREATE INDEX address_au_vornwahl_and_telefon_idx
+  ON address_au
+  USING btree
+  ((vornwahl_and_telefon::text));
+
+=============================================================================================
+
+-- Table: address_company_vn
+
+-- DROP TABLE address_company_vn;
+
+CREATE TABLE address_company_vn
+(
+  company character varying(255),
+  company1 character varying(255),
+  haus character varying(255),
+  hamlet character varying(255),
+  hamlet1 character varying(255),
+  address_zusatz character varying(255),
+  address_zusatz1 character varying(255),
+  street character varying(255),
+  street1 character varying(255),
+  ward character varying(255),
+  ward1 character varying(255),
+  district character varying(255),
+  district1 character varying(255),
+  province character varying(255),
+  province1 character varying(255),
+  telefone character varying(255),
+  fax character varying(255),
+  website1 character varying(255),
+  website2 character varying(255),
+  website3 character varying(255),
+  email1 character varying(255),
+  email2 character varying(255),
+  email3 character varying(255),
+  ward2 character varying(255),
+  ward3 character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE address_company_vn
+  OWNER TO address;
+GRANT ALL ON TABLE address_company_vn TO address;
+GRANT ALL ON TABLE address_company_vn TO vnthang;
+GRANT SELECT ON TABLE address_company_vn TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE address_company_vn TO dml_pri;
+GRANT SELECT ON TABLE address_company_vn TO app_masterdata;
+
+==================================================================================================
+
+-- Table: address_cz
+
+-- DROP TABLE address_cz;
+
+CREATE TABLE address_cz
+(
+  name character varying(100),
+  plz character varying(10),
+  ort character varying(100),
+  strasse1 character varying(100),
+  vornwahl_and_telefon character varying(20),
+  ort_text character varying(100),
+  managementid bigint,
+  nachname character varying(50),
+  vorname character varying(50),
+  hausnr character varying(10),
+  titel character varying(100),
+  tmp character varying(255),
+  strasse character varying(100),
+  hausenummer character varying(20),
+  tel_tmp character varying(50),
+  anrede character varying(5),
+  gleiort character varying(50),
+  sub_ort character varying(50),
+  note character varying(50),
+  vorwahlen character varying(50),
+  telefon character varying(50),
+  status character varying(100)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE address_cz
+  OWNER TO address;
+GRANT ALL ON TABLE address_cz TO address;
+GRANT SELECT ON TABLE address_cz TO db_access;
+GRANT ALL ON TABLE address_cz TO vnthang;
+GRANT SELECT ON TABLE address_cz TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE address_cz TO dml_pri;
+GRANT SELECT ON TABLE address_cz TO app_masterdata;
+COMMENT ON TABLE address_cz
+  IS 'Dia chi nuoc Czech - Date: 2010-03-12';
+
+==================================================================================================
+
+-- Table: titel
+
+-- DROP TABLE titel;
+
+CREATE TABLE titel
+(
+  titel character varying(40)
+)
+WITH (
+  OIDS=TRUE
+);
+ALTER TABLE titel
+  OWNER TO address;
+GRANT ALL ON TABLE titel TO address;
+GRANT SELECT ON TABLE titel TO db_access;
+GRANT ALL ON TABLE titel TO vnthang;
+GRANT SELECT ON TABLE titel TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE titel TO dml_pri;
+GRANT SELECT ON TABLE titel TO app_masterdata;
+
+==============================================================================================
+
+-- Table: plz_ort_strasse
+
+-- DROP TABLE plz_ort_strasse;
+
+CREATE TABLE plz_ort_strasse
+(
+  plz character varying(255),
+  ort character varying(255),
+  strasse character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  main_and_sub_ort character varying(255),
+  note1 character varying(255),
+  status character varying(255),
+  strasse1 character varying(255),
+  quantity real DEFAULT 1,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_ort_strasse
+  OWNER TO address;
+GRANT ALL ON TABLE plz_ort_strasse TO address;
+GRANT SELECT ON TABLE plz_ort_strasse TO filter_data;
+GRANT SELECT ON TABLE plz_ort_strasse TO db_access;
+GRANT ALL ON TABLE plz_ort_strasse TO vnthang;
+GRANT SELECT ON TABLE plz_ort_strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_ort_strasse TO dml_pri;
+GRANT SELECT ON TABLE plz_ort_strasse TO app_masterdata;
+COMMENT ON TABLE plz_ort_strasse
+  IS 'Dia chi nuoc DE, Update Date: 2013-06-05';
+
+-- Index: plz_ort_strasse_idx10
+
+-- DROP INDEX plz_ort_strasse_idx10;
+
+CREATE INDEX plz_ort_strasse_idx10
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx11
+
+-- DROP INDEX plz_ort_strasse_idx11;
+
+CREATE INDEX plz_ort_strasse_idx11
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx3
+
+-- DROP INDEX plz_ort_strasse_idx3;
+
+CREATE INDEX plz_ort_strasse_idx3
+  ON plz_ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx7
+
+-- DROP INDEX plz_ort_strasse_idx7;
+
+CREATE INDEX plz_ort_strasse_idx7
+  ON plz_ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx8
+
+-- DROP INDEX plz_ort_strasse_idx8;
+
+CREATE INDEX plz_ort_strasse_idx8
+  ON plz_ort_strasse
+  USING btree
+  (plz varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx9
+
+-- DROP INDEX plz_ort_strasse_idx9;
+
+CREATE INDEX plz_ort_strasse_idx9
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+==============================================================================
+
+-- Table: plz_ort_strasse_au
+
+-- DROP TABLE plz_ort_strasse_au;
+
+CREATE TABLE plz_ort_strasse_au
+(
+  plz character varying(255),
+  ort character varying(255),
+  strasse character varying(255),
+  main_and_sub_ort character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  strasse1 character varying(255),
+  quantity character varying(255),
+  ort1 character varying(255),
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_ort_strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE plz_ort_strasse_au TO address;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO app_masterdata;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO db_access;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_ort_strasse_au TO dml_pri;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO read_pri;
+GRANT ALL ON TABLE plz_ort_strasse_au TO vnthang;
+
+-- Index: plz_ort_strasse_au_idx1
+
+-- DROP INDEX plz_ort_strasse_au_idx1;
+
+CREATE INDEX plz_ort_strasse_au_idx1
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx10
+
+-- DROP INDEX plz_ort_strasse_au_idx10;
+
+CREATE INDEX plz_ort_strasse_au_idx10
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx11
+
+-- DROP INDEX plz_ort_strasse_au_idx11;
+
+CREATE INDEX plz_ort_strasse_au_idx11
+  ON plz_ort_strasse_au
+  USING btree
+  (strasse varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx2
+
+-- DROP INDEX plz_ort_strasse_au_idx2;
+
+CREATE INDEX plz_ort_strasse_au_idx2
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx3
+
+-- DROP INDEX plz_ort_strasse_au_idx3;
+
+CREATE INDEX plz_ort_strasse_au_idx3
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx4
+
+-- DROP INDEX plz_ort_strasse_au_idx4;
+
+CREATE INDEX plz_ort_strasse_au_idx4
+  ON plz_ort_strasse_au
+  USING btree
+  (ort varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx5
+
+-- DROP INDEX plz_ort_strasse_au_idx5;
+
+CREATE INDEX plz_ort_strasse_au_idx5
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx6
+
+-- DROP INDEX plz_ort_strasse_au_idx6;
+
+CREATE INDEX plz_ort_strasse_au_idx6
+  ON plz_ort_strasse_au
+  USING btree
+  (plz varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx9
+
+-- DROP INDEX plz_ort_strasse_au_idx9;
+
+CREATE INDEX plz_ort_strasse_au_idx9
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+
+===============================================================================
+
+-- Table: plz_strasse
+
+-- DROP TABLE plz_strasse;
+
+CREATE TABLE plz_strasse
+(
+  plz character varying(255),
+  strasse character varying(255),
+  status character varying(255),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_strasse
+  OWNER TO address;
+GRANT ALL ON TABLE plz_strasse TO address;
+GRANT SELECT ON TABLE plz_strasse TO filter_data;
+GRANT SELECT ON TABLE plz_strasse TO db_access;
+GRANT ALL ON TABLE plz_strasse TO vnthang;
+GRANT SELECT ON TABLE plz_strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_strasse TO dml_pri;
+GRANT SELECT ON TABLE plz_strasse TO app_masterdata;
+COMMENT ON TABLE plz_strasse
+  IS 'Dia chi nuoc DE, Update Date: 2013-06-05';
+
+-- Index: plz_strasse_idx1
+
+-- DROP INDEX plz_strasse_idx1;
+
+CREATE INDEX plz_strasse_idx1
+  ON plz_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plz_strasse_idx2
+
+-- DROP INDEX plz_strasse_idx2;
+
+CREATE INDEX plz_strasse_idx2
+  ON plz_strasse
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+
+=============================================================================
+
+-- Table: plz_strasse_au
+
+-- DROP TABLE plz_strasse_au;
+
+CREATE TABLE plz_strasse_au
+(
+  plz character varying(10),
+  strasse character varying(50),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE plz_strasse_au TO address;
+GRANT SELECT ON TABLE plz_strasse_au TO db_access;
+GRANT ALL ON TABLE plz_strasse_au TO vnthang;
+GRANT SELECT ON TABLE plz_strasse_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_strasse_au TO dml_pri;
+GRANT SELECT ON TABLE plz_strasse_au TO app_masterdata;
+COMMENT ON TABLE plz_strasse_au
+  IS 'Update: 2013-05-07';
+
+-- Index: plz_strasse_au_idx3
+
+-- DROP INDEX plz_strasse_au_idx3;
+
+CREATE INDEX plz_strasse_au_idx3
+  ON plz_strasse_au
+  USING btree
+  (plz);
+
+-- Index: plz_strasse_au_idx4
+
+-- DROP INDEX plz_strasse_au_idx4;
+
+CREATE INDEX plz_strasse_au_idx4
+  ON plz_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plz_strasse_au_idx5
+
+-- DROP INDEX plz_strasse_au_idx5;
+
+CREATE INDEX plz_strasse_au_idx5
+  ON plz_strasse_au
+  USING btree
+  (strasse varchar_pattern_ops);
+
+-- Index: plz_strasse_au_idx6
+
+-- DROP INDEX plz_strasse_au_idx6;
+
+CREATE INDEX plz_strasse_au_idx6
+  ON plz_strasse_au
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_strasse_au_idx7
+
+-- DROP INDEX plz_strasse_au_idx7;
+
+CREATE INDEX plz_strasse_au_idx7
+  ON plz_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+
+====================================================================
+
+-- Table: plzort
+
+-- DROP TABLE plzort;
+
+CREATE TABLE plzort
+(
+  plz character varying(255),
+  ort character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  main_and_sub_ort character varying(255),
+  status character varying(255),
+  uniserv_status character varying(255),
+  quantity character varying(255),
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plzort
+  OWNER TO address;
+GRANT ALL ON TABLE plzort TO address;
+GRANT SELECT ON TABLE plzort TO filter_data;
+GRANT SELECT ON TABLE plzort TO db_access;
+GRANT ALL ON TABLE plzort TO vnthang;
+GRANT SELECT ON TABLE plzort TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plzort TO dml_pri;
+GRANT SELECT ON TABLE plzort TO app_masterdata;
+COMMENT ON TABLE plzort
+  IS 'Dia chi nuoc DE, Update Date: 2013-06-05';
+
+-- Index: plzort_idx1
+
+-- DROP INDEX plzort_idx1;
+
+CREATE INDEX plzort_idx1
+  ON plzort
+  USING btree
+  ((plz::text) varchar_pattern_ops);
+
+-- Index: plzort_idx2
+
+-- DROP INDEX plzort_idx2;
+
+CREATE INDEX plzort_idx2
+  ON plzort
+  USING btree
+  (ort varchar_pattern_ops);
+
+-- Index: plzort_idx3
+
+-- DROP INDEX plzort_idx3;
+
+CREATE INDEX plzort_idx3
+  ON plzort
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plzort_idx4
+
+-- DROP INDEX plzort_idx4;
+
+CREATE INDEX plzort_idx4
+  ON plzort
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plzort_idx5
+
+-- DROP INDEX plzort_idx5;
+
+CREATE INDEX plzort_idx5
+  ON plzort
+  USING btree
+  (plz, lower(ort::text));
+
+-- Index: plzort_idx6
+
+-- DROP INDEX plzort_idx6;
+
+CREATE INDEX plzort_idx6
+  ON plzort
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+
+==========================================================================
+
+-- Table: plzort_au
+
+-- DROP TABLE plzort_au;
+
+CREATE TABLE plzort_au
+(
+  plz character varying(255),
+  main_and_sub_ort character varying(255),
+  ort character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  quantity character varying(255),
+  ort1 character varying(255),
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plzort_au
+  OWNER TO address;
+GRANT ALL ON TABLE plzort_au TO address;
+GRANT SELECT ON TABLE plzort_au TO app_masterdata;
+GRANT SELECT ON TABLE plzort_au TO db_access;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plzort_au TO dml_pri;
+GRANT SELECT ON TABLE plzort_au TO read_pri;
+GRANT ALL ON TABLE plzort_au TO vnthang;
+
+-- Index: plzort_au_idx1
+
+-- DROP INDEX plzort_au_idx1;
+
+CREATE INDEX plzort_au_idx1
+  ON plzort_au
+  USING btree
+  (plz, lower(ort::text));
+
+-- Index: plzort_au_idx2
+
+-- DROP INDEX plzort_au_idx2;
+
+CREATE INDEX plzort_au_idx2
+  ON plzort_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: plzort_au_idx4
+
+-- DROP INDEX plzort_au_idx4;
+
+CREATE INDEX plzort_au_idx4
+  ON plzort_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plzort_au_idx6
+
+-- DROP INDEX plzort_au_idx6;
+
+CREATE INDEX plzort_au_idx6
+  ON plzort_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plzort_au_idx7
+
+-- DROP INDEX plzort_au_idx7;
+
+CREATE INDEX plzort_au_idx7
+  ON plzort_au
+  USING btree
+  (ort varchar_pattern_ops);
+
+
+====================================================================
+
+-- Table: plz_ort_strasse
+
+-- DROP TABLE plz_ort_strasse;
+
+CREATE TABLE plz_ort_strasse
+(
+  plz character varying(255),
+  ort character varying(255),
+  strasse character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  main_and_sub_ort character varying(255),
+  note1 character varying(255),
+  status character varying(255),
+  strasse1 character varying(255),
+  quantity real DEFAULT 1,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_ort_strasse
+  OWNER TO address;
+GRANT ALL ON TABLE plz_ort_strasse TO address;
+GRANT SELECT ON TABLE plz_ort_strasse TO filter_data;
+GRANT SELECT ON TABLE plz_ort_strasse TO db_access;
+GRANT ALL ON TABLE plz_ort_strasse TO vnthang;
+GRANT SELECT ON TABLE plz_ort_strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_ort_strasse TO dml_pri;
+GRANT SELECT ON TABLE plz_ort_strasse TO app_masterdata;
+COMMENT ON TABLE plz_ort_strasse
+  IS 'Dia chi nuoc DE, Update Date: 2013-06-05';
+
+-- Index: plz_ort_strasse_idx10
+
+-- DROP INDEX plz_ort_strasse_idx10;
+
+CREATE INDEX plz_ort_strasse_idx10
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx11
+
+-- DROP INDEX plz_ort_strasse_idx11;
+
+CREATE INDEX plz_ort_strasse_idx11
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx3
+
+-- DROP INDEX plz_ort_strasse_idx3;
+
+CREATE INDEX plz_ort_strasse_idx3
+  ON plz_ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx7
+
+-- DROP INDEX plz_ort_strasse_idx7;
+
+CREATE INDEX plz_ort_strasse_idx7
+  ON plz_ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx8
+
+-- DROP INDEX plz_ort_strasse_idx8;
+
+CREATE INDEX plz_ort_strasse_idx8
+  ON plz_ort_strasse
+  USING btree
+  (plz varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_idx9
+
+-- DROP INDEX plz_ort_strasse_idx9;
+
+CREATE INDEX plz_ort_strasse_idx9
+  ON plz_ort_strasse
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+===============================================================
+
+-- Table: plz_ort_strasse_au
+
+-- DROP TABLE plz_ort_strasse_au;
+
+CREATE TABLE plz_ort_strasse_au
+(
+  plz character varying(255),
+  ort character varying(255),
+  strasse character varying(255),
+  main_and_sub_ort character varying(255),
+  sub_ort character varying(255),
+  gleiort character varying(255),
+  strasse1 character varying(255),
+  quantity character varying(255),
+  ort1 character varying(255),
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plz_ort_strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE plz_ort_strasse_au TO address;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO app_masterdata;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO db_access;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE plz_ort_strasse_au TO dml_pri;
+GRANT SELECT ON TABLE plz_ort_strasse_au TO read_pri;
+GRANT ALL ON TABLE plz_ort_strasse_au TO vnthang;
+
+-- Index: plz_ort_strasse_au_idx1
+
+-- DROP INDEX plz_ort_strasse_au_idx1;
+
+CREATE INDEX plz_ort_strasse_au_idx1
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx10
+
+-- DROP INDEX plz_ort_strasse_au_idx10;
+
+CREATE INDEX plz_ort_strasse_au_idx10
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx11
+
+-- DROP INDEX plz_ort_strasse_au_idx11;
+
+CREATE INDEX plz_ort_strasse_au_idx11
+  ON plz_ort_strasse_au
+  USING btree
+  (strasse varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx2
+
+-- DROP INDEX plz_ort_strasse_au_idx2;
+
+CREATE INDEX plz_ort_strasse_au_idx2
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx3
+
+-- DROP INDEX plz_ort_strasse_au_idx3;
+
+CREATE INDEX plz_ort_strasse_au_idx3
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx4
+
+-- DROP INDEX plz_ort_strasse_au_idx4;
+
+CREATE INDEX plz_ort_strasse_au_idx4
+  ON plz_ort_strasse_au
+  USING btree
+  (ort varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx5
+
+-- DROP INDEX plz_ort_strasse_au_idx5;
+
+CREATE INDEX plz_ort_strasse_au_idx5
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(ort::text) varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx6
+
+-- DROP INDEX plz_ort_strasse_au_idx6;
+
+CREATE INDEX plz_ort_strasse_au_idx6
+  ON plz_ort_strasse_au
+  USING btree
+  (plz varchar_pattern_ops);
+
+-- Index: plz_ort_strasse_au_idx9
+
+-- DROP INDEX plz_ort_strasse_au_idx9;
+
+CREATE INDEX plz_ort_strasse_au_idx9
+  ON plz_ort_strasse_au
+  USING btree
+  (lower(plz::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+
+==================================================================
+
+-- Table: strasse
+
+-- DROP TABLE strasse;
+
+CREATE TABLE strasse
+(
+  strasse character varying(255),
+  status character varying(255),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE strasse
+  OWNER TO address;
+GRANT ALL ON TABLE strasse TO address;
+GRANT SELECT ON TABLE strasse TO filter_data;
+GRANT SELECT ON TABLE strasse TO db_access;
+GRANT ALL ON TABLE strasse TO vnthang;
+GRANT SELECT ON TABLE strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE strasse TO dml_pri;
+GRANT SELECT ON TABLE strasse TO app_masterdata;
+COMMENT ON TABLE strasse
+  IS 'Dia chi nuoc DE, Update Date:2013-06-05';
+
+-- Index: strasse_idx2
+
+-- DROP INDEX strasse_idx2;
+
+CREATE INDEX strasse_idx2
+  ON strasse
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+
+========================================================
+
+-- Table: strasse_au
+
+-- DROP TABLE strasse_au;
+
+CREATE TABLE strasse_au
+(
+  strasse character varying(50),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE strasse_au TO address;
+GRANT ALL ON TABLE strasse_au TO vnthang;
+GRANT SELECT ON TABLE strasse_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE strasse_au TO dml_pri;
+GRANT SELECT ON TABLE strasse_au TO app_masterdata;
+COMMENT ON TABLE strasse_au
+  IS ' Updated: 2013-05-07';
+
+-- Index: strasse_au_idx1
+
+-- DROP INDEX strasse_au_idx1;
+
+CREATE INDEX strasse_au_idx1
+  ON strasse_au
+  USING btree
+  (lower(strasse::text) text_pattern_ops);
+
+
+==================================================
+
+-- Table: vorname
+
+-- DROP TABLE vorname;
+
+CREATE TABLE vorname
+(
+  anrede character varying(255),
+  vorname character varying(255),
+  status character varying(255),
+  id character varying(255),
+  quantity real,
+  vorname1 character varying,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE vorname
+  OWNER TO address;
+GRANT ALL ON TABLE vorname TO address;
+GRANT SELECT ON TABLE vorname TO filter_data;
+GRANT SELECT ON TABLE vorname TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE vorname TO dml_pri;
+GRANT SELECT ON TABLE vorname TO app_masterdata;
+
+
+===============================================================
+
+-- Table: vorname_au
+
+-- DROP TABLE vorname_au;
+
+CREATE TABLE vorname_au
+(
+  vorname character varying(100),
+  anrede character varying(5),
+  status character varying(100),
+  id character varying(255),
+  quantity real,
+  vorname1 character varying,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE vorname_au
+  OWNER TO address;
+GRANT ALL ON TABLE vorname_au TO address;
+GRANT SELECT ON TABLE vorname_au TO db_access;
+GRANT ALL ON TABLE vorname_au TO vnthang;
+GRANT SELECT ON TABLE vorname_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE vorname_au TO dml_pri;
+GRANT SELECT ON TABLE vorname_au TO app_masterdata;
+COMMENT ON TABLE vorname_au
+  IS 'updated: 07-10-2013';
+
+-- Index: vorname_au_new_idx2
+
+-- DROP INDEX vorname_au_new_idx2;
+
+CREATE INDEX vorname_au_new_idx2
+  ON vorname_au
+  USING btree
+  (lower(vorname::text) varchar_pattern_ops);
+
+============================================================
+
+-- Table: land
+
+-- DROP TABLE land;
+
+CREATE TABLE land
+(
+  land1 character varying(50),
+  code character varying(50),
+  ort character varying
+)
+WITH (
+  OIDS=TRUE
+);
+ALTER TABLE land
+  OWNER TO address;
+GRANT ALL ON TABLE land TO address;
+GRANT SELECT ON TABLE land TO db_access;
+GRANT ALL ON TABLE land TO vnthang;
+GRANT SELECT ON TABLE land TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE land TO dml_pri;
+GRANT SELECT ON TABLE land TO app_masterdata;
+COMMENT ON TABLE land
+  IS 'for all projects accept Messe_Stuttgart, HD';
+
+====================================================
+
+-- Table: land_pl
+
+-- DROP TABLE land_pl;
+
+CREATE TABLE land_pl
+(
+  country_code character varying(10),
+  code1 character varying(10),
+  code2 character varying(10),
+  country_english character varying(100),
+  country_german character varying(100),
+  capital character varying(50)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE land_pl
+  OWNER TO address;
+GRANT ALL ON TABLE land_pl TO address;
+GRANT ALL ON TABLE land_pl TO vnthang;
+GRANT SELECT ON TABLE land_pl TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE land_pl TO dml_pri;
+GRANT SELECT ON TABLE land_pl TO app_masterdata;
+COMMENT ON TABLE land_pl
+  IS 'Using for pb_polen';
+
+======================================================
+
+-- Table: country_name
+
+-- DROP TABLE country_name;
+
+CREATE TABLE country_name
+(
+  german_countryname character varying(255),
+  english_counryname character varying(255),
+  international_code character varying(255),
+  alphacode_2 character varying(255),
+  alphacode_3 character varying(255),
+  code character varying(255),
+  alphacode_2_ideas character varying(255),
+  international_code1 character varying(255),
+  capital character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE country_name
+  OWNER TO address;
+GRANT ALL ON TABLE country_name TO address;
+GRANT ALL ON TABLE country_name TO vnthang;
+GRANT SELECT ON TABLE country_name TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE country_name TO dml_pri;
+GRANT SELECT ON TABLE country_name TO app_masterdata;
+
+================================================
+
+-- Table: country_name_new
+
+-- DROP TABLE country_name_new;
+
+CREATE TABLE country_name_new
+(
+  german_countryname character varying(50),
+  english_counryname character varying(50),
+  international_code character varying(10),
+  alphacode_2 character varying(10),
+  alphacode_3 character varying(10)
+)
+WITH (
+  OIDS=TRUE
+);
+ALTER TABLE country_name_new
+  OWNER TO address;
+GRANT ALL ON TABLE country_name_new TO address;
+GRANT SELECT ON TABLE country_name_new TO db_access;
+GRANT ALL ON TABLE country_name_new TO vnthang;
+GRANT SELECT ON TABLE country_name_new TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE country_name_new TO dml_pri;
+GRANT SELECT ON TABLE country_name_new TO app_masterdata;
+
+====================================================
+
+-- Table: company_name
+
+-- DROP TABLE company_name;
+
+CREATE TABLE company_name
+(
+  name text
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE company_name
+  OWNER TO address;
+GRANT ALL ON TABLE company_name TO address;
+GRANT SELECT ON TABLE company_name TO db_access;
+GRANT ALL ON TABLE company_name TO vnthang;
+GRANT SELECT ON TABLE company_name TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE company_name TO dml_pri;
+GRANT SELECT ON TABLE company_name TO app_masterdata;
+
+-- Index: company_name_like_idx
+
+-- DROP INDEX company_name_like_idx;
+
+CREATE INDEX company_name_like_idx
+  ON company_name
+  USING btree
+  (lower(name) text_pattern_ops);
+
+
+==========================================================
+
+-- Table: company_name_hk
+
+-- DROP TABLE company_name_hk;
+
+CREATE TABLE company_name_hk
+(
+  company_name character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE company_name_hk
+  OWNER TO address;
+GRANT ALL ON TABLE company_name_hk TO address;
+GRANT ALL ON TABLE company_name_hk TO vnthang;
+GRANT SELECT ON TABLE company_name_hk TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE company_name_hk TO dml_pri;
+GRANT SELECT ON TABLE company_name_hk TO app_masterdata;
+
+
+=======================================================
+
+-- Table: nachname
+
+-- DROP TABLE nachname;
+
+CREATE TABLE nachname
+(
+  nachname character varying(100),
+  anzahl character varying(255),
+  quantity real,
+  nachname1 character varying,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE nachname
+  OWNER TO address;
+GRANT ALL ON TABLE nachname TO address;
+GRANT SELECT ON TABLE nachname TO filter_data;
+GRANT SELECT ON TABLE nachname TO db_access;
+GRANT ALL ON TABLE nachname TO vnthang;
+GRANT SELECT ON TABLE nachname TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE nachname TO dml_pri;
+GRANT SELECT ON TABLE nachname TO app_masterdata;
+COMMENT ON TABLE nachname
+  IS 'Ktel2008, Date: 2009-05-08';
+
+-- Index: nachname_new_nachname_idx
+
+-- DROP INDEX nachname_new_nachname_idx;
+
+CREATE INDEX nachname_new_nachname_idx
+  ON nachname
+  USING btree
+  (lower(nachname::text) text_pattern_ops);
+
+
+===============================================
+
+-- Table: nachname_au
+
+-- DROP TABLE nachname_au;
+
+CREATE TABLE nachname_au
+(
+  nachname character varying(150),
+  status character varying(10),
+  quantity real,
+  nachname1 character varying,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE nachname_au
+  OWNER TO address;
+GRANT ALL ON TABLE nachname_au TO address;
+GRANT SELECT ON TABLE nachname_au TO db_access;
+GRANT ALL ON TABLE nachname_au TO vnthang;
+GRANT SELECT ON TABLE nachname_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE nachname_au TO dml_pri;
+GRANT SELECT ON TABLE nachname_au TO app_masterdata;
+COMMENT ON TABLE nachname_au
+  IS ' Updated : 2013-10-07';
+
+-- Index: nachname_au_new_lower_nachname_idx
+
+-- DROP INDEX nachname_au_new_lower_nachname_idx;
+
+CREATE INDEX nachname_au_new_lower_nachname_idx
+  ON nachname_au
+  USING btree
+  (lower(nachname::text));
+
+
+=============================================================
+
+-- Table: ort_strasse
+
+-- DROP TABLE ort_strasse;
+
+CREATE TABLE ort_strasse
+(
+  ort character varying(255),
+  strasse character varying(100)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE ort_strasse
+  OWNER TO address;
+GRANT ALL ON TABLE ort_strasse TO address;
+GRANT SELECT ON TABLE ort_strasse TO filter_data;
+GRANT SELECT ON TABLE ort_strasse TO db_access;
+GRANT ALL ON TABLE ort_strasse TO vnthang;
+GRANT SELECT ON TABLE ort_strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE ort_strasse TO dml_pri;
+GRANT SELECT ON TABLE ort_strasse TO app_masterdata;
+
+-- Index: ort_strasse_idx1
+
+-- DROP INDEX ort_strasse_idx1;
+
+CREATE INDEX ort_strasse_idx1
+  ON ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: ort_strasse_idx2
+
+-- DROP INDEX ort_strasse_idx2;
+
+CREATE INDEX ort_strasse_idx2
+  ON ort_strasse
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+-- Index: ort_strasse_idx3
+
+-- DROP INDEX ort_strasse_idx3;
+
+CREATE INDEX ort_strasse_idx3
+  ON ort_strasse
+  USING btree
+  (strasse varchar_pattern_ops);
+
+-- Index: ort_strasse_idx5
+
+-- DROP INDEX ort_strasse_idx5;
+
+CREATE INDEX ort_strasse_idx5
+  ON ort_strasse
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+
+=====================================================================
+
+-- Table: ort_strasse_au
+
+-- DROP TABLE ort_strasse_au;
+
+CREATE TABLE ort_strasse_au
+(
+  ort character varying(50),
+  strasse character varying(50)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE ort_strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE ort_strasse_au TO address;
+GRANT SELECT ON TABLE ort_strasse_au TO db_access;
+GRANT ALL ON TABLE ort_strasse_au TO vnthang;
+GRANT SELECT ON TABLE ort_strasse_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE ort_strasse_au TO dml_pri;
+GRANT SELECT ON TABLE ort_strasse_au TO app_masterdata;
+
+-- Index: ort_strasse_au_idx5
+
+-- DROP INDEX ort_strasse_au_idx5;
+
+CREATE INDEX ort_strasse_au_idx5
+  ON ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops, lower(strasse::text) varchar_pattern_ops);
+
+-- Index: ort_strasse_au_ort_strasse_au_idx1
+
+-- DROP INDEX ort_strasse_au_ort_strasse_au_idx1;
+
+CREATE INDEX ort_strasse_au_ort_strasse_au_idx1
+  ON ort_strasse_au
+  USING btree
+  (lower(ort::text) varchar_pattern_ops);
+
+-- Index: ort_strasse_au_ort_strasse_au_idx2
+
+-- DROP INDEX ort_strasse_au_ort_strasse_au_idx2;
+
+CREATE INDEX ort_strasse_au_ort_strasse_au_idx2
+  ON ort_strasse_au
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+-- Index: ort_strasse_au_ort_strasse_au_idx3
+
+-- DROP INDEX ort_strasse_au_ort_strasse_au_idx3;
+
+CREATE INDEX ort_strasse_au_ort_strasse_au_idx3
+  ON ort_strasse_au
+  USING btree
+  (strasse varchar_pattern_ops);
+
+-- Index: ort_strasse_au_ort_strasse_au_idx4
+
+-- DROP INDEX ort_strasse_au_ort_strasse_au_idx4;
+
+CREATE INDEX ort_strasse_au_ort_strasse_au_idx4
+  ON ort_strasse_au
+  USING btree
+  (ort varchar_pattern_ops);
+
+
+=============================================================
+
+-- Table: strasse
+
+-- DROP TABLE strasse;
+
+CREATE TABLE strasse
+(
+  strasse character varying(255),
+  status character varying(255),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE strasse
+  OWNER TO address;
+GRANT ALL ON TABLE strasse TO address;
+GRANT SELECT ON TABLE strasse TO filter_data;
+GRANT SELECT ON TABLE strasse TO db_access;
+GRANT ALL ON TABLE strasse TO vnthang;
+GRANT SELECT ON TABLE strasse TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE strasse TO dml_pri;
+GRANT SELECT ON TABLE strasse TO app_masterdata;
+COMMENT ON TABLE strasse
+  IS 'Dia chi nuoc DE, Update Date:2013-06-05';
+
+-- Index: strasse_idx2
+
+-- DROP INDEX strasse_idx2;
+
+CREATE INDEX strasse_idx2
+  ON strasse
+  USING btree
+  (lower(strasse::text) varchar_pattern_ops);
+
+
+=================================================================
+
+-- Table: strasse_au
+
+-- DROP TABLE strasse_au;
+
+CREATE TABLE strasse_au
+(
+  strasse character varying(50),
+  strasse1 character varying(255),
+  quantity real,
+  auto_import_date character varying(255)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE strasse_au
+  OWNER TO address;
+GRANT ALL ON TABLE strasse_au TO address;
+GRANT ALL ON TABLE strasse_au TO vnthang;
+GRANT SELECT ON TABLE strasse_au TO read_pri;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE strasse_au TO dml_pri;
+GRANT SELECT ON TABLE strasse_au TO app_masterdata;
+COMMENT ON TABLE strasse_au
+  IS ' Updated: 2013-05-07';
+
+-- Index: strasse_au_idx1
+
+-- DROP INDEX strasse_au_idx1;
+
+CREATE INDEX strasse_au_idx1
+  ON strasse_au
+  USING btree
+  (lower(strasse::text) text_pattern_ops);
+
+
+=================================================================
+
+
+
+
+
