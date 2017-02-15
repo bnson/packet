@@ -1,3 +1,127 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package myCode;
+
+import com.ibm.icu.text.CharsetDetector;
+import com.ibm.icu.text.CharsetMatch;
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author bnson
+ */
+public class utilityFileFolder {
+
+    public static String detectEncoding(String pathFile) {
+        String encoding = "";
+        InputStream in = null;
+        
+        try {        
+            in = new BufferedInputStream(new FileInputStream(pathFile));
+            CharsetDetector detector = new CharsetDetector();
+            detector.setText(in);
+
+            CharsetMatch charsetMatch = detector.detect();
+            
+            if (charsetMatch != null) {
+                encoding = charsetMatch.getName();
+            }            
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (in != null) {
+                    in.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        
+        System.out.println("encoding: " + encoding);
+        return encoding;
+
+    }
+
+    public static String readTextFile(String path) {
+        String encoding = detectEncoding(path);
+        String content = "";
+        byte[] contentByte;
+
+        try {
+            contentByte = Files.readAllBytes(Paths.get(path));
+            
+            if (!encoding.isEmpty()) {
+                content = new String(contentByte, encoding);
+            } else {
+                content = new String(contentByte);
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return content;
+        
+    }
+
+    public static String readTextFile(String path, String encoding) {
+        BufferedReader reader = null;
+        StringBuilder content = new StringBuilder();
+        content.append("");
+
+        try {
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), encoding));
+
+            for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+                content.append(new String(line.getBytes(), encoding));
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(utilityFileFolder.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
+        return content.toString();
+
+    }
+
+}
+
+
+
+
+
 importPackage(javax.swing);
 function valid(Vorname, Land_Lookup){
 
