@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2017r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties SelectedLanguage="xslt2"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="5" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="301" lty="75" rbx="455" rby="92"/>
+					<data>
+						<constant value="D:\tmp\test\export\001" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="4" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="8"/>
+					</targets>
+					<view ltx="402" lty="41" rbx="455" rby="58"/>
+					<data>
+						<constant value="txt" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="347" lty="11" rbx="455" rby="28"/>
+					<data>
+						<constant value="Template_001" datatype="string"/>
+					</data>
+				</component>
+				<component name="template_export_001" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="641" rbx="942" rby="415"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="sgb" expanded="1">
+										<entry name="sgb_soft_mrp" expanded="1">
+											<entry name="exportTemplate" expanded="1">
+												<entry name="metaData" expanded="1">
+													<entry name="id" inpkey="1"/>
+													<entry name="exportName" inpkey="2"/>
+													<entry name="exportType" inpkey="3"/>
+													<entry name="exportPath" inpkey="4"/>
+												</entry>
+												<entry name="row" inpkey="5" expanded="1"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="template_export_001.xsd" inputinstance="template_export_001.xml" outputinstance="template_export_001.xml" instanceroot="{}sgb"/>
+					</data>
+				</component>
+				<component name="template_data_need_export" library="xml" uid="8" kind="14">
+					<properties/>
+					<view ltx="-30" lty="119" rbx="259" rby="319"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="table" expanded="1">
+										<entry name="row" outkey="18" expanded="1">
+											<entry name="id" outkey="21"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="template_data_need_export.xsd" inputinstance="template_data_need_export.xml" outputinstance="template_data_need_export.xml" instanceroot="{}table"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges>
+					<edge edgekey="19">
+						<data>
+							<dataconnection type="2"/>
+						</data>
+					</edge>
+				</edges>
+				<vertices>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="4" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="3" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="1" edgekey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="5" edgekey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="2" edgekey="22"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

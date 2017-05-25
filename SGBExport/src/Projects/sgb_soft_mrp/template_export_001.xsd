@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="sgb">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sgb_soft_mrp">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="exportTemplate">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="metaData">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="id">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="exportName">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="exportType">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="exportPath">
+														<xs:complexType/>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="row">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="id">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="download_id">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="form_id">
+														<xs:complexType/>
+													</xs:element>
+													<xs:element name="filepath">
+														<xs:complexType/>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
