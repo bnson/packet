@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<sgb>
+    <project id="sgb_soft_mrp">
+        <host>localhost</host>
+        <port>5432</port>
+        <database>postgres</database>
+        <schema>sgb_soft_mrp</schema>
+        <username>postgres</username>
+        <password>gemdark1986!</password>
+        <queryExportList>select id,filepath from sgb_soft_mrp.management where classify_status = 1 limit 100</queryExportList>
+        <queryExportData>select * from query_to_xml('select id,download_id,form_id,filepath from sgb_soft_mrp.management where id in (?)', false, false, '')</queryExportData>
+        <queryExportFinish>update sgb_soft_mrp.management set classify_status = 2 where id in (?);update sgb_soft_mrp.management set classify_status = 3 where id in (?)</queryExportFinish>
+        <exportTemplate>
+            <template>D:\project\sgb\NetBeansProjects\SGBExport\src\Projects\sgb_soft_mrp\template_export_001.xslt</template>
+        </exportTemplate>
+    </project>        
+    <project id="public">
+        <host>localhost</host>
+        <port>5432</port>
+        <database>postgres</database>
+        <schema>public</schema>
+        <username>postgres</username>
+        <password>gemdark1986!</password>
+        <queryExportList>select * from public.lookup_plz_ort_strasse where status = '' limit 100</queryExportList>
+        <queryExportData>select * from query_to_xml('select * from public.lookup_plz_ort_strasse where id in (?)', false, false, '')</queryExportData>
+        <queryExportFinish>update public.lookup_plz_ort_strasse set status = 2 where id = ?</queryExportFinish>
+        <exportTemplate>
+            <template>D:\project\sgb\NetBeansProjects\SGBExport\src\Projects\sgb_soft_mrp\template_001.xsd</template>
+        </exportTemplate>        
+    </project>     
+</sgb>

@@ -1,0 +1,18 @@
+<sgb>
+    <sgb_soft_mrp>
+        <exportTemplate>
+            <metaData>
+                <id/>
+                <exportName/>
+                <exportType/>
+                <exportPath/>   
+            </metaData>
+            <row>
+                <id/>
+                <download_id/>
+                <form_id/>
+                <filepath/>
+            </row>  
+        </exportTemplate>            
+    </sgb_soft_mrp>
+</sgb>
