@@ -2043,3 +2043,88 @@ CREATE INDEX strasse_au_idx1
 
 
 
+ftpLicenseName=GHPFarEastLtd
+ftpLicanseKey=5N4qDSUywq6/7PVcplDub1EPsKE0mjPi
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Implementation.sourcecode.application.Reference;
+
+import Implementation.sourcecode.configuration.Configuration;
+import Implementation.sourcecode.utilities.EncryptDecryptUtils;
+import Implementation.sourcecode.utilities.IdeasUtilities;
+import com.enterprisedt.net.ftp.FTPException;
+import com.enterprisedt.net.ftp.ssh.SSHFTPClient;
+import com.enterprisedt.util.license.License;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+/**
+ *
+ * @author nvhviet
+ */
+public class SFTPDownload {
+
+    private static SFTPDownload instance = null;
+    
+    private SFTPDownload() {
+
+    }
+
+    public static SFTPDownload getInstance() {
+        if (instance == null) {
+            instance = new SFTPDownload();
+        }
+        return instance;
+    }
+
+    public void doDownload() throws FTPException, IOException, InterruptedException, Exception {
+        Configuration properties = Configuration.getInstance();
+        String ftpLicenseName = properties.getProperty("ftpLicenseName");
+        String ftpLicanseKey = EncryptDecryptUtils.decrypt(properties.getProperty("ftpLicanseKey"));
+        String ftpHostName = properties.getProperty("ftpHostName");
+        String ftpUser = properties.getProperty("ftpUser");
+        String ftpPass = EncryptDecryptUtils.decrypt(properties.getProperty("ftpPass"));
+        String ftpFolder = properties.getProperty("ftpFolder");
+        String ftpMoveFile = properties.getProperty("ftpMoveFile");
+        String ftpFileExt = properties.getProperty("ftpFileExt");
+        String ftpDownloadTo = properties.getProperty("ftpDownloadTo");
+        int ftpPort = Integer.parseInt(properties.getProperty("ftpPort"));        
+        
+        SSHFTPClient sftp = null;
+        License.setLicenseDetails(ftpLicenseName, ftpLicanseKey);
+        sftp = new SSHFTPClient();
+        sftp.setRemoteHost(ftpHostName);
+        sftp.setRemotePort(ftpPort);
+        sftp.setAuthentication(ftpUser, ftpPass);
+        sftp.getValidator().setHostValidationEnabled(false);
+        sftp.connect();
+        sftp.chdir(ftpFolder);
+
+        for (String fileName : sftp.dir()) {
+            if (fileName.endsWith(ftpFileExt)) {
+                //===========Check file Complete================================
+                while(true){
+                    long currentSize = sftp.fileDetails(fileName).size();
+                    TimeUnit.SECONDS.sleep(5);
+                    long afterSize = sftp.fileDetails(fileName).size();
+                    if(currentSize == afterSize){
+                        break;
+                    }
+                    IdeasUtilities.logInfo(fileName + " is checking size... " + afterSize);
+                }
+                //==============================================================
+                IdeasUtilities.logInfo(fileName + " is downloading...");
+                sftp.get(ftpDownloadTo, fileName);
+                sftp.rename(fileName, ftpMoveFile + "/" + fileName);
+                IdeasUtilities.logInfo(fileName + " is downloaded");
+            }
+        }
+
+        sftp.quitImmediately();
+        sftp = null;
+    }   
+}
