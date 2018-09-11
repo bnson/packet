@@ -27,7 +27,7 @@
 #quiz ul li:hover {
 	cursor:pointer;
 	background-color: #b3ffb3;
-	display: table-cell;
+	/*display: table-cell;*/
 }
 
 #quiz ul
